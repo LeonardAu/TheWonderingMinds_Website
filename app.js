@@ -16,6 +16,10 @@ function scrollInto() {
   document.getElementById("themainheader").scrollIntoView();
 }
 
+function contentSection() {
+  document.getElementById("contentsection").scrollIntoView();
+}
+
 /////////////////////////////////////////////////////////////////////////
 
 let index = 0,

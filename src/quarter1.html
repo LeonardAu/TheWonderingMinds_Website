@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quarter 1</title>
+    <link rel="icon" href="/img/teamlogo.png" type="image/png">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.15.4/css/all.css">
     <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
@@ -63,10 +64,12 @@
     <!-- Mobile Menu open: "block", Menu closed: "hidden" -->
     <div x-cloak :class="[isOpen ? 'translate-x-0 opacity-100 ' : 'opacity-0 -translate-x-full']" class="absolute inset-x-0 z-20 w-full px-6 py-4 text-left shadow-md transition-all duration-300 ease-in-out bg-[#7F5153] lg:relative lg:top-0 flex lg:w-auto lg:translate-x-0 lg:items-center lg:bg-transparent lg:p-0 lg:opacity-100 lg:shadow-none lg:dark:bg-transparent" id="thenavbarelite">
     <div class="lg:-px-8 flex flex-col space-y-4 text-left lg:mt-0 lg:flex-row lg:space-y-0">
-        <a class="list-none transform transition-colors duration-300 hover:text-blue-500 text-gray-200 dark:hover:text-blue-400 lg:mx-8" href="/index.html">Home</a>
-        <a class="list-none transform transition-colors duration-300 hover:text-blue-500 text-gray-200 dark:hover:text-blue-400 lg:mx-8" href="#">Timeline</a>
-        <a class="list-none transform transition-colors duration-300 hover:text-blue-500 text-gray-200 dark:hover:text-blue-400 lg:mx-8" href="./src/contactus.html">Contact Us</a>
-        <a class="list-none transform transition-colors duration-300 hover:text-blue-500 text-gray-200 dark:hover:text-blue-400 lg:mx-8" href="#">Content</a>
+      <a class="list-none transform transition-colors duration-300 text-gray-200 hover:text-[#c2a6ae] lg:mx-8 font-Blanka min-[1024px]:hidden" href="#">Wondering Minds</a>
+      <a class="list-none transform transition-colors duration-300 text-gray-200 hover:text-[#8ca1d2] lg:mx-8" href="/index.html">Home</a>
+      <a class="list-none transform transition-colors duration-300 text-gray-200 hover:text-[#8ca1d2] lg:mx-8" href="/index.html">Content</a>
+      <a class="list-none transform transition-colors duration-300 text-gray-200 hover:text-[#c2a6ae] lg:mx-8 font-Blanka max-[1023px]:hidden" href="#">Wondering Minds</a>
+      <a class="list-none transform transition-colors duration-300 text-gray-200 hover:text-[#8ca1d2] lg:mx-8" href="./contactus.html">Contact Us</a>
+      <a class="list-none transform transition-colors duration-300 text-gray-200 hover:text-[#8ca1d2] lg:mx-8" href="#">Events</a>
     </div>
 </div>
 </nav>
@@ -500,55 +503,42 @@ How did we know what are the viewer's interests and demographic? What type of me
     
 <!--FOOTERR-->
 <footer class="bg-gray-100 dark:bg-gray-900">
-    <div class="container m-auto space-y-8 px-6 py-16 text-gray-600 dark:text-gray-400 md:px-12 lg:px-20">
-      <div class="flex flex-wrap items-center justify-between gap-4 border-b border-gray-200 dark:border-gray-800 pb-8">
-     <!--   <img width="100" height="42" src="INSERT TEAM LOGO HERE" alt="" class="w-32"> -->
-     <p>Note: Some of the features on this website is buggy with the Firefox browser.</p>
-        <div class="flex gap-6">
-          <a href="#" target="blank" aria-label="github" class="hover:text-primary">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
-              <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path>
-            </svg>
-          </a>
-          <a href="#" target="blank" aria-label="twitter" class="hover:text-primary">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-twitter" viewBox="0 0 16 16">
-              <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"></path>
-            </svg>
-          </a>
-          <a href="#" target="blank" aria-label="medium" class="hover:text-primary">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-medium" viewBox="0 0 16 16">
-              <path d="M9.025 8c0 2.485-2.02 4.5-4.513 4.5A4.506 4.506 0 0 1 0 8c0-2.486 2.02-4.5 4.512-4.5A4.506 4.506 0 0 1 9.025 8zm4.95 0c0 2.34-1.01 4.236-2.256 4.236-1.246 0-2.256-1.897-2.256-4.236 0-2.34 1.01-4.236 2.256-4.236 1.246 0 2.256 1.897 2.256 4.236zM16 8c0 2.096-.355 3.795-.794 3.795-.438 0-.793-1.7-.793-3.795 0-2.096.355-3.795.794-3.795.438 0 .793 1.699.793 3.795z"></path>
-            </svg>
-          </a>
-        </div>
-      </div>
-      <div class="flex justify-between rounded-3xl bg-gray-800 px-4 py-3 text-gray-400">
-        <span>© Group10 <span id="year">2022</span></span>
-        <a href="https://www.apache.org/licenses/LICENSE-2.0" class="font-medium transition hover:text-primary">Apache 2.0</a>
+  <div class="container m-auto space-y-8 px-6 py-16 text-gray-600 dark:text-gray-400 md:px-12 lg:px-20">
+    <div class="flex flex-wrap items-center justify-between gap-4 border-b border-gray-200 dark:border-gray-800 pb-8">
+      <img width="100" height="42" src="/img/teamlogo.png" alt="logo tailus" class="w-24">
+      <div class="flex gap-6">
+        <a href="#" target="blank" aria-label="github" class="hover:text-primary">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+            <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path>
+          </svg>
+        </a>
+        <a href="#" target="blank" aria-label="twitter" class="hover:text-primary">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-twitter" viewBox="0 0 16 16">
+            <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"></path>
+          </svg>
+        </a>
+        <a href="#" target="blank" aria-label="medium" class="hover:text-primary">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-medium" viewBox="0 0 16 16">
+            <path d="M9.025 8c0 2.485-2.02 4.5-4.513 4.5A4.506 4.506 0 0 1 0 8c0-2.486 2.02-4.5 4.512-4.5A4.506 4.506 0 0 1 9.025 8zm4.95 0c0 2.34-1.01 4.236-2.256 4.236-1.246 0-2.256-1.897-2.256-4.236 0-2.34 1.01-4.236 2.256-4.236 1.246 0 2.256 1.897 2.256 4.236zM16 8c0 2.096-.355 3.795-.794 3.795-.438 0-.793-1.7-.793-3.795 0-2.096.355-3.795.794-3.795.438 0 .793 1.699.793 3.795z"></path>
+          </svg>
+        </a>
       </div>
     </div>
-  </footer>
+    <div class="w-full -mx-6 lg:w-2/5">
+      <div class="px-6">
+          <div>
+              <p class="text-lg font-medium text-gray-700 dark:text-gray-100">Note:</p>
+          </div>
 
-
-
-
-
-
-<!--DROPDOWN /W COOKIES TEMPLATE;
-
-                    <div x-data="{ showDropdown: $persist(0) }">
-                        <button x-cloak x-show="showDropdown === 0"  x-on:click="showDropdown += 1" class="button text-white">
-                          Show More
-                        </button>
-                        <button x-cloak x-transition:enter x-show="showDropdown === 1" x-on:click="showDropdown -= 1" class="button text-white">
-                           Show Less
-                          </button>
-                      
-                        <div x-cloak x-transition x-show="showDropdown" class="content text-white">Menu</div>
-                      </div>
-                    
-                    
-                    END-->
+          <p>Some of the features on this website is buggy with the Firefox browser.</p>
+      </div>
+  </div>
+    <div class="flex justify-between rounded-3xl bg-gray-800 px-4 py-3 text-gray-400">
+      <span>© Wondering Minds <span id="year">2022</span></span>
+      <a href="https://www.apache.org/licenses/LICENSE-2.0" class="font-medium transition hover:text-primary">Apache 2.0</a>
+    </div>
+  </div>
+</footer>
 
 
 

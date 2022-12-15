@@ -2,13 +2,14 @@
 <html style="scroll-behavior: smooth;">
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Main</title>
+<link rel="icon" href="./img/teamlogo.png" type="image/png">
 <link rel="stylesheet" href="./css/main.css">
 <link rel="stylesheet" href="style.css">
 <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
-<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.15.4/css/all.css" crossorigin="anonymous"/>
-<script src="cookies.min.js"></script>
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.15.4/css/all.css"/>
 <script src="https://cdn.jsdelivr.net/npm/ukiyojs@3.0.3/dist/ukiyo.min.js"></script>
 <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
@@ -18,7 +19,7 @@
 
       <!--NAVBAR-->
 
-      <nav data-aos="fade-right" x-data="{ isOpen: false }" class="absolute top-0 w-full bg-transparent flex justify-center items-center z-20" style="height: 8% ;">
+      <nav data-aos="fade-down" x-data="{ isOpen: false }" class="absolute top-0 w-full bg-transparent flex justify-center items-center z-20" style="height: 8% ;">
         <div class="flex items-center justify-between">
   
         <!-- Mobile menu button -->
@@ -38,10 +39,13 @@
         <!-- Mobile Menu open: "block", Menu closed: "hidden" -->
         <div x-cloak :class="[isOpen ? 'translate-x-0 opacity-100 ' : 'opacity-0 -translate-x-full']" class="absolute inset-x-0 z-20 w-full px-6 py-4 text-left shadow-md transition-all duration-300 ease-in-out bg-[#7F5153] lg:relative lg:top-0 flex lg:w-auto lg:translate-x-0 lg:items-center lg:bg-transparent lg:p-0 lg:opacity-100 lg:shadow-none lg:dark:bg-transparent" id="thenavbarelite">
         <div class="lg:-px-8 flex flex-col space-y-4 text-left lg:mt-0 lg:flex-row lg:space-y-0">
-            <a class="list-none transform text-gray-700 transition-colors duration-300 hover:text-blue-500 dark:text-gray-200 dark:hover:text-blue-400 lg:mx-8" href="#">About</a>
-            <a class="list-none transform text-gray-700 transition-colors duration-300 hover:text-blue-500 dark:text-gray-200 dark:hover:text-blue-400 lg:mx-8" href="#">Timeline</a>
-            <a class="list-none transform text-gray-700 transition-colors duration-300 hover:text-blue-500 dark:text-gray-200 dark:hover:text-blue-400 lg:mx-8" href="./src/contactus.html">Contact Us</a>
-            <a class="list-none transform text-gray-700 transition-colors duration-300 hover:text-blue-500 dark:text-gray-200 dark:hover:text-blue-400 lg:mx-8" href="#">Content</a>
+          <a class="list-none transform transition-colors duration-300 text-gray-200 hover:text-[#c2a6ae] lg:mx-8 font-Blanka min-[1024px]:hidden" href="#">Wondering Minds</a>
+          <a class="list-none transform transition-colors duration-300 text-gray-200 hover:text-[#8ca1d2] lg:mx-8" href="/index.html">Home</a>
+          <a class="list-none transform transition-colors duration-300 text-gray-200 hover:text-[#8ca1d2] lg:mx-8" href="/index.html">Content</a>
+          <a class="list-none transform transition-colors duration-300 text-gray-200 hover:text-[#c2a6ae] lg:mx-8 font-Blanka max-[1023px]:hidden" href="#">Wondering Minds</a>
+          <a class="list-none transform transition-colors duration-300 text-gray-200 hover:text-[#8ca1d2] lg:mx-8" href="./contactus.html">Contact Us</a>
+          <a class="list-none transform transition-colors duration-300 text-gray-200 hover:text-[#8ca1d2] lg:mx-8" href="#">Events</a>
+        <!--<a class="list-none transform text-gray-700 transition-colors duration-300 hover:text-blue-500 dark:text-gray-200 dark:hover:text-blue-400 lg:mx-8" href="#">Timeline</a>-->
         </div>
 </div>
     </nav>
@@ -49,10 +53,10 @@
 
     <!--HEADER-->
 
-<div id="parallaxfx" class="relative h-screen w-full bg-cover bg-no-repeat grid place-items-center" style="background-image: url(./img/bluishclouds.jpg)">
+<div id="parallaxfx" class="relative h-[70rem] w-full bg-cover bg-no-repeat grid place-items-center" style="background-image: url(https://wallpaperaccess.com/full/1387442.jpg)">
     
-  <div class="text-center mt-105 opacity-100" data-aos="fade-right">
-    <h1 class="text-center text-5xl font-bold mb-2 text-white titletext">Welcome to 
+  <div class="text-center mt-105 opacity-100 welcometext" data-aos="fade-up">
+    <h1 class="text-center text-5xl font-bold mb-2 text-white titletext max-[525px]:hidden">Welcome to 
         <span class="magic">
             <span class="magic-star">
               <svg viewBox="0 0 512 512">
@@ -69,9 +73,11 @@
               <path d="M512 255.1c0 11.34-7.406 20.86-18.44 23.64l-171.3 42.78l-42.78 171.1C276.7 504.6 267.2 512 255.9 512s-20.84-7.406-23.62-18.44l-42.66-171.2L18.47 279.6C7.406 276.8 0 267.3 0 255.1c0-11.34 7.406-20.83 18.44-23.61l171.2-42.78l42.78-171.1C235.2 7.406 244.7 0 256 0s20.84 7.406 23.62 18.44l42.78 171.2l171.2 42.78C504.6 235.2 512 244.6 512 255.1z" />
               </svg>
             </span>
-            <span class="magic-text">Group 10's</span>
+            <span class="magic-text">The Wondering Minds'</span>
           </span>
         Website!</h1>
+
+      <h1 class="text-center text-5xl font-bold mb-2 text-white titletext min-[526px]:hidden">Welcome to <p class="text-transparent bg-clip-text bg-gradient-to-r from-[#f48fb1] via-[#673ab7] to-[#7b1fa2] ">The Wondering Minds'</p> Website!</h1>
     <h3 class="text-center text-xl mb-8 text-gray-200">To get started, press the button below.</h3>
 
     <div>
@@ -114,12 +120,12 @@
 </div>
   <hr/>
 
-<!--QUARTERS-->
-  <section class="bg-gradient-to-t from-[#20191A] via-[#20191A] to-[#AC4139]">
+<!--CONTENT-->
+  <section class="bg-gradient-to-t from-[#20191A] via-[#20191A] to-[#AC4139]" id="contentsection">
   <div class="container mx-auto px-6 py-10">
       <h1 class="text-center text-3xl font-semibold capitalize text-gray-800 dark:text-white lg:text-4xl">Content</h1>
 
-      <p class="mt-4 text-center text-gray-500 dark:text-gray-300">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nostrum quam voluptatibus</p>
+      <p class="mt-4 text-center text-gray-500 dark:text-gray-300">Welcome! As the title suggests, you will see all of our available content below. <br>Some are to come sooner, please give us your patience :)</p>
 
       <div class="mt-8 grid grid-cols-1 gap-8 md:grid-cols-2 xl:mt-12 xl:grid-cols-3 xl:gap-12">
         <a href="./src/quarter1.html" class="rounded-xl group relative block bg-black hover:-translate-x-1 hover:-translate-y-1 delay-50 duration-100 hover:shadow-[10px_10px_#7F5153]">
@@ -151,10 +157,10 @@ method of content, rather than the content itself.
             </div>
           </a>
 <!--"href" from Quarter 2-4-YTChannel has been removed, add it later-->
-          <a class="rounded-xl group relative block bg-black hover:-translate-x-1 hover:-translate-y-1 delay-50 duration-100 hover:shadow-[10px_10px_#7F5153] cursor-pointer">
+          <a href="./src/quarter2.html" class="rounded-xl group relative block bg-black hover:-translate-x-1 hover:-translate-y-1 delay-50 duration-100 hover:shadow-[10px_10px_#7F5153] cursor-pointer">
             <img
               alt="Comming Soon"
-              src="./img/floatingastronaut.gif"
+              src="./img/streamoutline.jpg"
               class="rounded-xl absolute inset-0 h-full w-full object-cover bg-cover bg-no-repeat opacity-75 transition-opacity group-hover:opacity-50"
             />
           
@@ -163,14 +169,40 @@ method of content, rather than the content itself.
                 Quarter 2
               </p>
           
-              <p class="text-2xl font-bold text-white">Under Construction!</p>
+              <p class="text-2xl font-bold text-white">Streaming Outline</p>
           
               <div class="mt-64">
                 <div
                   class="translate-y-8 transform opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100"
                 >
                   <p class="text-sm text-white">
-                    Working on it!
+                    Broadcasting in streaming is the process of sending out a live audio or video stream to multiple listeners or viewers simultaneously. It can be done over the internet, using streaming services like YouTube, Twitch, and others. Broadcasting can also be done on a local scale, such as when a radio station broadcasts a live concert or sporting event to its listeners. Broadcasting is a powerful way to reach a large audience quickly, and is an important part of the entertainment industry.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </a>
+
+          <a href="https://www.youtube.com/@school_purposes" target="_blank" rel="noopener noreferrer" class="rounded-xl group relative block bg-black hover:-translate-x-1 hover:-translate-y-1 delay-50 duration-100 hover:shadow-[10px_10px_#7F5153] cursor-pointer">
+            <img
+              alt="Youtube Channel"
+              src="./img/youtubechannel.jpg"
+              class="rounded-xl absolute inset-0 h-full w-full object-cover bg-cover bg-no-repeat opacity-75 transition-opacity group-hover:opacity-50"
+            />
+          
+            <div class="relative p-8">
+              <p class="text-sm font-medium uppercase tracking-widest text-pink-500">
+                Youtube Channel
+              </p>
+          
+              <p class="text-2xl font-bold text-white">Video Content</p>
+          
+              <div class="mt-64">
+                <div
+                  class="translate-y-8 transform opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100"
+                >
+                  <p class="text-sm text-white">
+                    Subscribe!
                   </p>
                 </div>
               </div>
@@ -240,7 +272,7 @@ method of content, rather than the content itself.
       
         <div class="relative p-8">
           <p class="text-sm font-medium uppercase tracking-widest text-pink-500">
-            Youtube Channel
+            Events
           </p>
       
           <p class="text-2xl font-bold text-white">Comming Soon</p>
@@ -425,7 +457,7 @@ method of content, rather than the content itself.
 
   <!-- QUOTES----------------------------------->
 
-  <section class="bg-gradient-to-r from-[#20191A] via-[#AC4139] to-[#20191A]">
+  <section class="lg:bg-gradient-to-r lg:from-[#20191A] lg:via-[#AC4139] lg:to-[#20191A] max-[1023px]:bg-[#AC4139]"> 
   <div class="container mx-auto px-6 py-10 items-center justify-center">
       <h1 class="text-center text-3xl font-semibold capitalize text-gray-800 dark:text-white lg:text-4xl">A Famous Quote</h1>
 
@@ -482,17 +514,17 @@ method of content, rather than the content itself.
 
       <div>
           <div class="relative">
-          <img class="h-64 w-full rounded-lg object-cover object-center lg:h-80" src="./img/floatingastronaut.gif" alt="" />
+          <img class="h-64 w-full rounded-lg object-cover object-center lg:h-80" src="./img/streamoutline.jpg" alt="" />
 
           </div>
 
-          <h1 class="mt-6 text-xl font-semibold text-gray-800 dark:text-white">Comming Soon!</h1>
+          <h1 class="mt-6 text-xl font-semibold text-gray-800 dark:text-white">Streaming Outline</h1>
 
           <hr class="my-6 w-32 text-blue-500" />
 
-          <p class="text-sm text-gray-500 dark:text-gray-400">Comming Soon!</p>
+          <p class="text-sm text-gray-500 dark:text-gray-400">In this Quarter, we planned and discussed what we will do in the next quarter. We are trying to get preppared for our upcomming content.</p>
 
-          <!--     <a href="#" class="mt-4 inline-block text-blue-500 underline hover:text-blue-400">Read more</a>               -->
+<a href="./src/quarter2.html" class="mt-4 inline-block text-blue-500 underline hover:text-blue-400">Read more</a>
       </div>
 
       <div>
@@ -520,8 +552,7 @@ method of content, rather than the content itself.
 <footer class="bg-gray-100 dark:bg-gray-900">
   <div class="container m-auto space-y-8 px-6 py-16 text-gray-600 dark:text-gray-400 md:px-12 lg:px-20">
     <div class="flex flex-wrap items-center justify-between gap-4 border-b border-gray-200 dark:border-gray-800 pb-8">
-   <!--   <img width="100" height="42" src="INSERT TEAM LOGO HERE" alt="" class="w-32"> -->
-   <h1 class="font-semibold capitalize text-gray-400 text-base">Got any questions or problems? <a href="./src/contactus.html" class="underline">Contact us</a></h1>
+      <img width="100" height="42" src="/img/teamlogo.png" alt="logo tailus" class="w-24">
       <div class="flex gap-6">
         <a href="#" target="blank" aria-label="github" class="hover:text-primary">
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
@@ -540,8 +571,17 @@ method of content, rather than the content itself.
         </a>
       </div>
     </div>
+    <div class="w-full -mx-6 lg:w-2/5">
+      <div class="px-6">
+          <div>
+              <p class="text-lg font-medium text-gray-700 dark:text-gray-100"></p>
+          </div>
+
+          <p>Got any questions or problems? <a href="./src/contactus.html" class="underline">Contact us</a></p>
+      </div>
+  </div>
     <div class="flex justify-between rounded-3xl bg-gray-800 px-4 py-3 text-gray-400">
-      <span>© Group10 <span id="year">2022</span></span>
+      <span>© Wondering Minds <span id="year">2022</span></span>
       <a href="https://www.apache.org/licenses/LICENSE-2.0" class="font-medium transition hover:text-primary">Apache 2.0</a>
     </div>
   </div>
@@ -562,7 +602,7 @@ method of content, rather than the content itself.
 
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script>
-    AOS.init();
+    AOS.init({once: true});
   </script>
 
 
