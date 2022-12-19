@@ -3,7 +3,6 @@
     <img width="165" src="./img/teamlogo.png" alt="teamlogo.png">
     <br>
     The Wondering Minds</h1>
-  <p>Simple and lightweight JavaScript library for modern background parallax,<br>with support for picture elements and any images.</p>
   <p>
 
 [![License](https://img.shields.io/github/license/LeonardAu/LL-Website_Group10_v2)](https://github.com/LeonardAu/LL-Website_Group10_v2/blob/master/LICENSE)
@@ -19,10 +18,6 @@
 </div>
 <br>
 
-<!---
-[![License](https://img.shields.io/github/license/LeonardAu/LL-Website_Group10_v2)](https://github.com/LeonardAu/LL-Website_Group10_v2/blob/master/LICENSE)
-[![WebStatus](https://img.shields.io/website?down_color=red&down_message=offline&label=website%20status&logo=vercel&up_color=green&up_message=online&url=https%3A%2F%2Fthewonderingminds.vercel.app%2F)](https://thewonderingminds.vercel.app/)
--->
 ## About
 The website we made serves as our portfolio for the whole quarter. We will release the content we made [here](https://thewonderingminds.vercel.app/) or on our [Youtube Channel](https://www.youtube.com/@school_purposes). We are from APEC Schools Ortigas Extension, B09-10-S1-2 Group 10. 
 
@@ -35,11 +30,11 @@ Our content is all about The Positive Impacts of Having Self-Defense Skills on T
 
 ## The Frameworks and Libraries that we used
 This web design we made heavily relied on the TailwindCSS framework. Here is the complete list of frameworks and libraries on how the website was made. 
-- [TailwindCSS](https://tailwindcss.com/)is a utility-first CSS framework packed with classes like flex, pt-4, text-center and rotate-90 that can be composed to build any design, directly in your markup.
+- [TailwindCSS](https://tailwindcss.com/) is a utility-first CSS framework packed with classes that can be composed to build any design, directly in your markup.
 - [AlphineJS](https://alpinejs.dev/) is a rugged, minimal tool for composing behavior directly in your markup.
 - [Font Awesome](https://fontawesome.com/) is the Internet's icon library and toolkit, used by millions of designers, developers, and content creators.
 - [Ukiyo.js](https://github.com/yitengjun/ukiyo-js) is a simple and lightweight JavaScript library for modern background parallax, with support for picture elements and any images.
-- [Animation on Scroll](https://github.com/michalsnik/aos) is a JavaScript library that adds animation to HTML elements easily.
+- ~~[Animation on Scroll](https://github.com/michalsnik/aos) is a JavaScript library that adds animation to HTML elements easily.~~
 
 
 ## Credits
@@ -62,7 +57,5 @@ Note: This is not the complete list of where we got the templates; it's only the
 - [x] Quarter 2
 - [ ] Quarter 3
 - [ ] Quarter 4
-
-<span style="color:blue">some *This is Blue italic.* text</span>
 
 <br>
