@@ -25,7 +25,7 @@ The website we made serves as our portfolio for the whole quarter. We will relea
 We want to provide students with quality education online. We use the new technology available, and employ fun ways to make learning fun and interactive. We provide students with basic resources, support, and high-quality educational content.
 
 ### Our Thesis/Project
-Our content is all about The Positive Impacts of Having Self-Defense Skills on Teenager's Self-Confidence.
+Our content is all about `The Positive Impacts of Having Self-Defense Skills on Teenager's Self-Confidence.`
 
 
 ## The Frameworks and Libraries that we used
