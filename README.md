@@ -5,7 +5,7 @@
     The Wondering Minds</h1>
   <p>
 
-[![License](https://img.shields.io/github/license/LeonardAu/LL-Website_Group10_v2)](https://github.com/LeonardAu/LL-Website_Group10_v2/blob/master/LICENSE)
+[![License](https://img.shields.io/github/license/LeonardAu/TheWonderingMinds_Website?label=LICENSE)](https://github.com/LeonardAu/LL-Website_Group10_v2/blob/master/LICENSE)
 [![WebStatus](https://img.shields.io/website?down_color=red&down_message=offline&label=website%20status&logo=vercel&up_color=green&up_message=online&url=https%3A%2F%2Fthewonderingminds.vercel.app%2F)](https://thewonderingminds.vercel.app/)
   
   </p>
