@@ -51,6 +51,10 @@ Note: This is not the complete list of where we got the templates; it's only the
 - [https://mambaui.com/](https://mambaui.com/) 
 - [https://codepen.io/](https://codepen.io/) 
 
+#### Images
+Note: This is not the complete list of where we got our images; it's only the main list or where most of the images we used can be found.
+- [https://unsplash.com/](https://unsplash.com/)
+- [https://wallpaperaccess.com/](https://wallpaperaccess.com/)
 
 ## Releases
 - [x] Quarter 1
