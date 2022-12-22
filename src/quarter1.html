@@ -8,6 +8,7 @@
     <link rel="icon" href="/img/teamlogo.png" type="image/png">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.15.4/css/all.css">
     <link rel="stylesheet" href="/css/main.css">
+    <script defer src="https://unpkg.com/alpinejs-scroll-amount@latest/dist/scroll-amount.min.js" ></script> 
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <style>
 #needsofviewers{
@@ -21,8 +22,10 @@
   .hoverglowing:hover{
     box-shadow: 0 0 25px #AC4139, 0 0 30px #AC4139, 0 0 45px;
   }
+
   ::selection {
   background: #2b2b2b;
+
 }
 
 
@@ -40,44 +43,158 @@
 <script src="https://cdn.jsdelivr.net/npm/ukiyojs@3.0.3/dist/ukiyo.min.js"></script>
 </head>
 <body>
+<div x-data="{ scrollPos: {} }" x-init="scrollPos = $scrollAmount" x-on:scroll.window="scrollPos = $scrollAmount">
+  
+  <div
+    class="fixed inset-x-0 top-0 h-1 z-[1000] bg-[#c2a6ae] ease-[linear] transition-[width]"
+    :style="{ width: `${scrollPos.scrollPercent}%` }"
+  ></div>
 
 
 
 
-<nav data-aos="fade-right" x-data="{ isOpen: false }" class="absolute top-0 w-full bg-transparent flex justify-center items-center z-20" style="height: 8% ;">
-    <div class="flex items-center justify-between">
-
-    <!-- Mobile menu button -->
-    <div class="flex lg:hidden py-5 px-5 bg-[#20191A] rounded-3xl">
-        <button x-cloak @click="isOpen = !isOpen" type="button" class="focus:outline-none text-gray-200 hover:text-gray-400 focus:text-gray-400" aria-label="toggle menu">
-        <svg x-show="!isOpen" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M4 8h16M4 16h16" />
-        </svg>
-
-        <svg x-show="isOpen" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-        </svg>
-        </button>
-    </div>
-    </div>
-
-    <!-- Mobile Menu open: "block", Menu closed: "hidden" -->
-    <div x-cloak :class="[isOpen ? 'translate-x-0 opacity-100 ' : 'opacity-0 -translate-x-full']" class="absolute inset-x-0 z-20 w-full px-6 py-4 text-left shadow-md transition-all duration-300 ease-in-out bg-[#7F5153] lg:relative lg:top-0 flex lg:w-auto lg:translate-x-0 lg:items-center lg:bg-transparent lg:p-0 lg:opacity-100 lg:shadow-none lg:dark:bg-transparent" id="thenavbarelite">
-    <div class="lg:-px-8 flex flex-col space-y-4 text-left lg:mt-0 lg:flex-row lg:space-y-0">
-      <a class="list-none transform transition-colors duration-300 text-gray-200 hover:text-[#c2a6ae] lg:mx-8 font-Blanka min-[1024px]:hidden" href="#">Wondering Minds</a>
-      <a class="list-none transform transition-colors duration-300 text-gray-200 hover:text-[#8ca1d2] lg:mx-8" href="/index.html">Home</a>
-      <a class="list-none transform transition-colors duration-300 text-gray-200 hover:text-[#8ca1d2] lg:mx-8" href="/index.html">Content</a>
-      <a class="list-none transform transition-colors duration-300 text-gray-200 hover:text-[#c2a6ae] lg:mx-8 font-Blanka max-[1023px]:hidden" href="#">Wondering Minds</a>
-      <a class="list-none transform transition-colors duration-300 text-gray-200 hover:text-[#8ca1d2] lg:mx-8" href="./contactus.html">Contact Us</a>
-      <a class="list-none transform transition-colors duration-300 text-gray-200 hover:text-[#8ca1d2] lg:mx-8" href="#">Events</a>
-    </div>
-</div>
-</nav>
 
 
-<div id="parallaxfx" class="relative h-[60vh] w-full bg-cover bg-no-repeat grid place-items-center" style="background-image: url(/img/streamingwp.jpg)">
 
-<div class="text-center mt-64 opacity-100" data-aos="fade-right">
+<div x-data="{ mobileMenu: false }" id="parallaxfx" class="relative h-[60vh] w-full bg-no-repeat bg-cover" style="background-image: url(/img/streamingwp.jpg)">
+
+  <div class="font-sans antialiased my-5">
+    <nav class="bg-transparent">
+        <!-- Primary Navigation Menu -->
+        <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex">
+                    <!-- Logo -->
+                    <div class="flex items-center flex-shrink-0 select-none"><img src="/img/teamlogo.png" alt="" class="h-16 w-16"></div>
+                    <!-- Navigation Links -->
+                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex select-none"><a
+                            class="inline-flex items-center px-1 pt-1 text-sm font-medium -mx-4 leading-5 text-white font-Blanka"> Wondering Minds </a></div>
+                </div>
+  
+                <div class="hidden sm:flex sm:items-center sm:ml-6">
+  
+  
+                    <div class="relative ml-3">
+                        <div>
+                            <span class="inline-flex rounded-md">
+                                <a href="/index.html"
+                                    class="inline-flex items-center px-3 py-2 text-sm font-medium leading-4 transition duration-150 ease-in-out border border-transparent rounded-full text-gray-200 bg-[#20191A] hover:bg-gray-50 hover:text-gray-700 focus:outline-none active:bg-gray-50">Home
+                                     
+                            </a>
+                            </span>
+                        </div>
+  
+                        <div class="fixed inset-0 z-40" style="display: none;"></div>
+  
+  
+  
+                    </div>
+  
+                    <div class="relative ml-3">
+                        <div><span class="inline-flex rounded-md"><a href="./contactus.html"
+                                    class="inline-flex items-center px-3 py-2 text-sm font-medium leading-4 transition duration-150 ease-in-out border border-transparent rounded-full text-gray-200 bg-[#20191A] hover:bg-gray-50 hover:text-gray-700 focus:outline-none active:bg-gray-50">Contact Us
+                        </a></span></div><!-- Full Screen Dropdown Overlay -->
+  
+                        <div class="fixed inset-0 z-40" style="display: none;"></div>
+  
+                    </div>
+  
+                    
+                    <div class="relative ml-3">
+                        <div><span class="inline-flex rounded-md"><a href="https://github.com/LeonardAu/TheWonderingMinds_Website/blob/master/README.md" target="_blank" rel="noopener noreferrer"
+                                    class="inline-flex items-center px-3 py-2 text-sm font-medium leading-4 transition duration-150 ease-in-out border border-transparent rounded-full text-gray-200 bg-[#20191A] hover:bg-gray-50 hover:text-gray-700 focus:outline-none active:bg-gray-50">About
+                        </a></span></div><!-- Full Screen Dropdown Overlay -->
+  
+                        <div class="fixed inset-0 z-40" style="display: none;"></div>
+  
+                    </div>
+                </div>
+  
+                <div class="flex items-center -mr-2 sm:hidden">
+  
+  
+                    <button @click="mobileMenu = !mobileMenu"
+                        class="inline-flex items-center justify-center p-2 transition duration-150 ease-in-out rounded-md bg-[#20191A] text-gray-200 hover:text-gray-500 focus:outline-none focus:text-gray-500"><svg 
+                        x-show="mobileMenu === false" class="w-6 h-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                            <path class="inline-flex" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                            <path class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                        <svg x-show="mobileMenu === true" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+                      </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+  
+        <div x-show="mobileMenu" class="sm:hidden">
+            <div class="pt-2 pb-3 space-y-1">
+                <div><a class="block py-2 pl-3 pr-4 text-base font-medium transition duration-150 ease-in-out text-indigo-200 bg-indigo-800 focus:outline-none focus:text-indigo-800 focus:bg-indigo-100 focus:border-indigo-700 font-Blanka"
+                        href="#"> Wondering Minds </a></div>
+            </div>
+            <div class="pt-4 pb-1 border-t border-gray-200 dark:border-gray-600">
+              <a href="/index.html" class="flex items-center px-4 text-base font-medium transition duration-150 ease-in-out border-transparent text-gray-200 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300 focus:outline-none focus:text-gray-800 focus:bg-gray-50 focus:border-gray-300">
+                  <div>
+                      <div class="text-base font-medium">Home
+                      </div>
+                      <div class="text-sm font-medium text-gray-500">Go back home?</div>
+                  </div>
+                </a>
+              <div class="mt-3 space-y-1">
+                  <div>
+                      <a class="block py-2 pl-3 pr-4 text-base font-medium transition duration-150 ease-in-out border-l-4 border-transparent text-gray-200 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300 focus:outline-none focus:text-gray-800 focus:bg-gray-50 focus:border-gray-300"
+                          href="https://github.com/LeonardAu/TheWonderingMinds_Website/blob/master/README.md"> About </a>
+                  </div>
+
+                  <div>
+                      <a class="block py-2 pl-3 pr-4 text-base font-medium transition duration-150 ease-in-out border-l-4 border-transparent text-gray-200 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300 focus:outline-none focus:text-gray-800 focus:bg-gray-50 focus:border-gray-300"
+                          href="./contactus.html"> Contact Us </a>
+                  </div>
+
+                  <div class="border-t border-gray-200 dark:border-gray-600"></div>
+
+                  <div class="block px-4 py-2 text-xs text-gray-300"> Content </div>
+                  <!-- Content -->
+                  <div><a class="block py-2 pl-3 pr-4 text-base font-medium text-gray-600 transition duration-150 ease-in-out border-l-4 border-transparent dark:text-gray-200 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300 focus:outline-none focus:text-gray-800 focus:bg-gray-50 focus:border-gray-300"
+                          href="./quarter1.html"> Quarter 1 </a></div>
+                  <div><a class="block py-2 pl-3 pr-4 text-base font-medium text-gray-600 transition duration-150 ease-in-out border-l-4 border-transparent dark:text-gray-200 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300 focus:outline-none focus:text-gray-800 focus:bg-gray-50 focus:border-gray-300"
+                          href="./quarter2.html"> Quarter 2 </a></div>
+                  <!--(TIMELINE)
+                        <div class="border-t border-gray-200 dark:border-gray-600"></div>
+                  
+                  <div class="block px-4 py-2 text-xs text-gray-400"> Our Journey </div>
+                  <div><a class="block py-2 pl-3 pr-4 text-base font-medium text-gray-600 transition duration-150 ease-in-out border-l-4 border-transparent dark:text-gray-200 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300 focus:outline-none focus:text-gray-800 focus:bg-gray-50 focus:border-gray-300"
+                      href="#"> Timeline </a></div>  -->
+              </div>
+          </div>
+        </div>
+    </nav>
+  
+    <header class="bg-transparent">
+        <div class="px-4 py-6 mx-auto max-w-7xl sm:px-6 lg:px-8">
+            <h2 class="text-xl font-semibold leading-tight text-gray-200">  <ol class="inline-flex items-center space-x-1 md:space-x-3">
+                <li class="inline-flex items-center">
+                  <a href="/index.html" class="text-sm inline-flex items-center text-white hover:text-gray-300">
+                    <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"></path></svg>
+                    Home
+                  </a>
+                </li>
+                <li>
+                  <div class="flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+                    </svg>
+                    <a href="./quarter1.html" class="ml-1 md:ml-2 text-sm font-medium text-white hover:text-gray-300">Quarter 1</a>
+                  </div>
+                </li>
+  
+              </ol></h2>
+        </div>
+    </header>
+  </div>
+<div class="text-center mt-28 opacity-100" data-aos="fade-right" x-show="mobileMenu === false" x-cloak> 
 <h1 class="text-center text-4xl font-bold mb-2 text-white titletext">QUARTER 1:</h1>
 <h3 class="text-center text-2xl mb-8 text-gray-200">STREAMING</h3>
 
@@ -507,7 +624,7 @@ How did we know what are the viewer's interests and demographic? What type of me
     <div class="flex flex-wrap items-center justify-between gap-4 border-b border-gray-200 dark:border-gray-800 pb-8">
       <img width="100" height="42" src="/img/teamlogo.png" alt="logo tailus" class="w-24">
       <div class="flex gap-6">
-        <a href="#" target="blank" aria-label="github" class="hover:text-primary">
+        <a href="https://github.com/LeonardAu/TheWonderingMinds_Website" target="blank" aria-label="github" class="hover:text-primary">
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
             <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path>
           </svg>
@@ -517,20 +634,27 @@ How did we know what are the viewer's interests and demographic? What type of me
             <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"></path>
           </svg>
         </a>
-        <a href="#" target="blank" aria-label="medium" class="hover:text-primary">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-medium" viewBox="0 0 16 16">
-            <path d="M9.025 8c0 2.485-2.02 4.5-4.513 4.5A4.506 4.506 0 0 1 0 8c0-2.486 2.02-4.5 4.512-4.5A4.506 4.506 0 0 1 9.025 8zm4.95 0c0 2.34-1.01 4.236-2.256 4.236-1.246 0-2.256-1.897-2.256-4.236 0-2.34 1.01-4.236 2.256-4.236 1.246 0 2.256 1.897 2.256 4.236zM16 8c0 2.096-.355 3.795-.794 3.795-.438 0-.793-1.7-.793-3.795 0-2.096.355-3.795.794-3.795.438 0 .793 1.699.793 3.795z"></path>
+        <a href="#" title="facebook" target="blank" aria-label="facebook">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor"
+            class="m-auto w-5"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"
+            ></path>
           </svg>
         </a>
       </div>
     </div>
-    <div class="w-full -mx-6 lg:w-2/5">
+    <div class="w-full -mx-6 ">
       <div class="px-6">
           <div>
-              <p class="text-lg font-medium text-gray-700 dark:text-gray-100">Note:</p>
+              <p class="text-lg font-medium text-gray-700 dark:text-gray-100"></p>
           </div>
 
-          <p>Some of the features on this website is buggy with the Firefox browser.</p>
+          <p>Some of the features on this website is buggy with the Firefox and Safari browser.</p>
       </div>
   </div>
     <div class="flex justify-between rounded-3xl bg-gray-800 px-4 py-3 text-gray-400">
@@ -539,7 +663,7 @@ How did we know what are the viewer's interests and demographic? What type of me
     </div>
   </div>
 </footer>
-
+</div>
 
 
 

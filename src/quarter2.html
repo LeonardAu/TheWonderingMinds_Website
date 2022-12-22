@@ -15,54 +15,173 @@
     top: 64px;
   }
 }
+::-webkit-scrollbar-track {
+  background: #fff; 
+}
+
+::selection {
+  background: #2b2b2b;
+
+}
     </style>
     <script defer src="https://unpkg.com/@alpinejs/persist@3.x.x/dist/cdn.min.js"></script>
+    <script defer src="https://unpkg.com/alpinejs-scroll-amount@latest/dist/scroll-amount.min.js" ></script> 
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/ukiyojs@3.0.3/dist/ukiyo.min.js"></script>
 </head>
 <body class="bg-[#20191A]">
+    
+  <div x-data="{ scrollPos: {} }" x-init="scrollPos = $scrollAmount" x-on:scroll.window="scrollPos = $scrollAmount">
+  
+    <div
+      class="fixed inset-x-0 top-0 h-1 z-[1000] bg-[#c2a6ae] ease-[linear] transition-[width]"
+      :style="{ width: `${scrollPos.scrollPercent}%` }"
+    ></div>
 
+  <div x-data="{ mobileMenu: false }" id="parallaxfx" class="relative h-[60vh] w-full bg-no-repeat bg-cover" style="background-image: url(/img/streamoutline.jpg)">
 
-
-    <nav data-aos="fade-right" x-data="{ isOpen: false }" class="absolute top-0 w-full bg-transparent flex justify-center items-center z-20" style="height: 8% ;">
-        <div class="flex items-center justify-between">
+    <div class="font-sans antialiased my-5">
+      <nav class="bg-transparent">
+          <!-- Primary Navigation Menu -->
+          <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+              <div class="flex justify-between h-16">
+                  <div class="flex">
+                      <!-- Logo -->
+                      <div class="flex items-center flex-shrink-0 select-none"><img src="/img/teamlogo.png" alt="" class="h-16 w-16"></div>
+                      <!-- Navigation Links -->
+                      <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex select-none"><a
+                              class="inline-flex items-center px-1 pt-1 text-sm font-medium -mx-4 leading-5 text-white font-Blanka"> Wondering Minds </a></div>
+                  </div>
     
-        <!-- Mobile menu button -->
-        <div class="flex lg:hidden py-5 px-5 bg-[#20191A] rounded-3xl">
-            <button x-cloak @click="isOpen = !isOpen" type="button" class="focus:outline-none text-gray-200 hover:text-gray-400 focus:text-gray-400" aria-label="toggle menu">
-            <svg x-show="!isOpen" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M4 8h16M4 16h16" />
-            </svg>
+                  <div class="hidden sm:flex sm:items-center sm:ml-6">
     
-            <svg x-show="isOpen" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-            </svg>
-            </button>
-        </div>
-        </div>
     
-        <!-- Mobile Menu open: "block", Menu closed: "hidden" -->
-        <div x-cloak :class="[isOpen ? 'translate-x-0 opacity-100 ' : 'opacity-0 -translate-x-full']" class="absolute inset-x-0 z-20 w-full px-6 py-4 text-left shadow-md transition-all duration-300 ease-in-out bg-[#7F5153] lg:relative lg:top-0 flex lg:w-auto lg:translate-x-0 lg:items-center lg:bg-transparent lg:p-0 lg:opacity-100 lg:shadow-none lg:dark:bg-transparent" id="thenavbarelite">
-        <div class="lg:-px-8 flex flex-col space-y-4 text-left lg:mt-0 lg:flex-row lg:space-y-0">
-            <a class="list-none transform transition-colors duration-300 text-gray-200 hover:text-[#c2a6ae] lg:mx-8 font-Blanka min-[1024px]:hidden" href="#">Wondering Minds</a>
-            <a class="list-none transform transition-colors duration-300 text-gray-200 hover:text-[#8ca1d2] lg:mx-8" href="/index.html">Home</a>
-            <a class="list-none transform transition-colors duration-300 text-gray-200 hover:text-[#8ca1d2] lg:mx-8" href="/index.html">Content</a>
-            <a class="list-none transform transition-colors duration-300 text-gray-200 hover:text-[#c2a6ae] lg:mx-8 font-Blanka max-[1023px]:hidden" href="#">Wondering Minds</a>
-            <a class="list-none transform transition-colors duration-300 text-gray-200 hover:text-[#8ca1d2] lg:mx-8" href="./contactus.html">Contact Us</a>
-            <a class="list-none transform transition-colors duration-300 text-gray-200 hover:text-[#8ca1d2] lg:mx-8" href="#">Events</a></a>
-        </div>
+                      <div class="relative ml-3">
+                          <div>
+                              <span class="inline-flex rounded-md">
+                                  <a href="/index.html"
+                                      class="inline-flex items-center px-3 py-2 text-sm font-medium leading-4 transition duration-150 ease-in-out border border-transparent rounded-full text-gray-200 bg-[#20191A] hover:bg-gray-50 hover:text-gray-700 focus:outline-none active:bg-gray-50">Home
+                                       
+                              </a>
+                              </span>
+                          </div>
+    
+                          <div class="fixed inset-0 z-40" style="display: none;"></div>
+    
+    
+    
+                      </div>
+    
+                      <div class="relative ml-3">
+                          <div><span class="inline-flex rounded-md"><a href="./contactus.html"
+                                      class="inline-flex items-center px-3 py-2 text-sm font-medium leading-4 transition duration-150 ease-in-out border border-transparent rounded-full text-gray-200 bg-[#20191A] hover:bg-gray-50 hover:text-gray-700 focus:outline-none active:bg-gray-50">Contact Us
+                          </a></span></div><!-- Full Screen Dropdown Overlay -->
+    
+                          <div class="fixed inset-0 z-40" style="display: none;"></div>
+    
+                      </div>
+    
+                      
+                      <div class="relative ml-3">
+                          <div><span class="inline-flex rounded-md"><a href="https://github.com/LeonardAu/TheWonderingMinds_Website/blob/master/README.md" target="_blank" rel="noopener noreferrer"
+                                      class="inline-flex items-center px-3 py-2 text-sm font-medium leading-4 transition duration-150 ease-in-out border border-transparent rounded-full text-gray-200 bg-[#20191A] hover:bg-gray-50 hover:text-gray-700 focus:outline-none active:bg-gray-50">About
+                          </a></span></div><!-- Full Screen Dropdown Overlay -->
+    
+                          <div class="fixed inset-0 z-40" style="display: none;"></div>
+    
+                      </div>
+                  </div>
+    
+                  <div class="flex items-center -mr-2 sm:hidden">
+    
+    
+                      <button @click="mobileMenu = !mobileMenu"
+                          class="inline-flex items-center justify-center p-2 transition duration-150 ease-in-out rounded-md bg-[#20191A] text-gray-200 hover:text-gray-500 focus:outline-none focus:text-gray-500"><svg 
+                          x-show="mobileMenu === false" class="w-6 h-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                              <path class="inline-flex" stroke-linecap="round" stroke-linejoin="round"
+                                  stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                              <path class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                  d="M6 18L18 6M6 6l12 12"></path>
+                          </svg>
+                          <svg x-show="mobileMenu === true" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                      </button>
+                  </div>
+              </div>
+          </div>
+    
+          <div x-show="mobileMenu" class="sm:hidden">
+              <div class="pt-2 pb-3 space-y-1">
+                  <div><a class="block py-2 pl-3 pr-4 text-base font-medium transition duration-150 ease-in-out text-indigo-200 bg-indigo-800 focus:outline-none focus:text-indigo-800 focus:bg-indigo-100 focus:border-indigo-700 font-Blanka"
+                          href="#"> Wondering Minds </a></div>
+              </div>
+              <div class="pt-4 pb-1 border-t border-gray-200 dark:border-gray-600">
+                <a href="/index.html" class="flex items-center px-4 text-base font-medium transition duration-150 ease-in-out border-transparent text-gray-200 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300 focus:outline-none focus:text-gray-800 focus:bg-gray-50 focus:border-gray-300">
+                    <div>
+                        <div class="text-base font-medium">Home
+                        </div>
+                        <div class="text-sm font-medium text-gray-500">Go back home?</div>
+                    </div>
+                  </a>
+                <div class="mt-3 space-y-1">
+                    <div>
+                        <a class="block py-2 pl-3 pr-4 text-base font-medium transition duration-150 ease-in-out border-l-4 border-transparent text-gray-200 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300 focus:outline-none focus:text-gray-800 focus:bg-gray-50 focus:border-gray-300"
+                            href="https://github.com/LeonardAu/TheWonderingMinds_Website/blob/master/README.md"> About </a>
+                    </div>
+  
+                    <div>
+                        <a class="block py-2 pl-3 pr-4 text-base font-medium transition duration-150 ease-in-out border-l-4 border-transparent text-gray-200 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300 focus:outline-none focus:text-gray-800 focus:bg-gray-50 focus:border-gray-300"
+                            href="./contactus.html"> Contact Us </a>
+                    </div>
+  
+                    <div class="border-t border-gray-200 dark:border-gray-600"></div>
+  
+                    <div class="block px-4 py-2 text-xs text-gray-300"> Content </div>
+                    <!-- Content -->
+                    <div><a class="block py-2 pl-3 pr-4 text-base font-medium text-gray-600 transition duration-150 ease-in-out border-l-4 border-transparent dark:text-gray-200 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300 focus:outline-none focus:text-gray-800 focus:bg-gray-50 focus:border-gray-300"
+                            href="./quarter1.html"> Quarter 1 </a></div>
+                    <div><a class="block py-2 pl-3 pr-4 text-base font-medium text-gray-600 transition duration-150 ease-in-out border-l-4 border-transparent dark:text-gray-200 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300 focus:outline-none focus:text-gray-800 focus:bg-gray-50 focus:border-gray-300"
+                            href="./quarter2.html"> Quarter 2 </a></div>
+                    <!--(TIMELINE)
+                          <div class="border-t border-gray-200 dark:border-gray-600"></div>
+                    
+                    <div class="block px-4 py-2 text-xs text-gray-400"> Our Journey </div>
+                    <div><a class="block py-2 pl-3 pr-4 text-base font-medium text-gray-600 transition duration-150 ease-in-out border-l-4 border-transparent dark:text-gray-200 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300 focus:outline-none focus:text-gray-800 focus:bg-gray-50 focus:border-gray-300"
+                        href="#"> Timeline </a></div>  -->
+                </div>
+            </div>
+          </div>
+      </nav>
+    
+      <header class="bg-transparent">
+          <div class="px-4 py-6 mx-auto max-w-7xl sm:px-6 lg:px-8">
+              <h2 class="text-xl font-semibold leading-tight text-gray-200">  <ol class="inline-flex items-center space-x-1 md:space-x-3">
+                  <li class="inline-flex items-center">
+                    <a href="/index.html" class="text-sm inline-flex items-center text-white hover:text-gray-300">
+                      <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"></path></svg>
+                      Home
+                    </a>
+                  </li>
+                  <li>
+                    <div class="flex items-center">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
+                          <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+                      </svg>
+                      <a href="./quarter2.html" class="ml-1 md:ml-2 text-sm font-medium text-white hover:text-gray-300">Quarter 2</a>
+                    </div>
+                  </li>
+    
+                </ol></h2>
+          </div>
+      </header>
     </div>
-    </nav>
-    
-    
-    <div id="parallaxfx" class="relative h-[60vh] w-full bg-cover bg-no-repeat grid place-items-center" style="background-image: url(/img/streamoutline.jpg)">
-    
-    <div class="text-center mt-64 opacity-100" data-aos="fade-right">
-    <h1 class="text-center text-4xl font-bold mb-2 text-white titletext">QUARTER 2:</h1>
-    <h3 class="text-center text-2xl mb-8 text-gray-200">STREAMING OUTLINE</h3>
-    
-    </div>
-    </div>
+  <div class="text-center mt-28 opacity-100" data-aos="fade-right" x-show="mobileMenu === false" x-cloak> 
+  <h1 class="text-center text-4xl font-bold mb-2 text-white titletext">QUARTER 2:</h1>
+  <h3 class="text-center text-2xl mb-8 text-gray-200">STREAMING OUTLINE</h3>
+  
+  </div>
+  </div>
 
 
     <section class="bg-[#20191A]">
@@ -396,147 +515,6 @@
         </div>
     </section>
       
-  <!--   <div class="container mx-auto px-6">
-        <div class="h-64 rounded-md overflow-hidden bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1577655197620-704858b270ac?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1280&q=144')">
-            <div class="bg-gray-900 bg-opacity-50 flex items-center h-full">
-                <div class="px-10 max-w-xl">
-                    <h2 class="text-2xl text-white font-semibold">Sport Shoes</h2>
-                    <p class="mt-2 text-gray-400">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempore facere provident molestias ipsam sint voluptatum pariatur.</p>
-                    <button class="flex items-center mt-4 px-3 py-2 bg-blue-600 text-white text-sm uppercase font-medium rounded hover:bg-blue-500 focus:outline-none focus:bg-blue-500">
-                        <span>Shop Now</span>
-                        <svg class="h-5 w-5 mx-2" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-                    </button>
-                </div>
-            </div>
-        </div>
-        <div class="md:flex mt-8 md:-mx-4">
-            <div class="w-full h-64 md:mx-4 rounded-md overflow-hidden bg-cover bg-center md:w-1/2" style="background-image: url('https://images.unsplash.com/photo-1547949003-9792a18a2601?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80')">
-                <div class="bg-gray-900 bg-opacity-50 flex items-center h-full">
-                    <div class="px-10 max-w-xl">
-                        <h2 class="text-2xl text-white font-semibold">Back Pack</h2>
-                        <p class="mt-2 text-gray-400">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempore facere provident molestias ipsam sint voluptatum pariatur.</p>
-                        <button class="flex items-center mt-4 text-white text-sm uppercase font-medium rounded hover:underline focus:outline-none">
-                            <span>Shop Now</span>
-                            <svg class="h-5 w-5 mx-2" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <div class="w-full h-64 mt-8 md:mx-4 rounded-md overflow-hidden bg-cover bg-center md:mt-0 md:w-1/2" style="background-image: url('https://images.unsplash.com/photo-1486401899868-0e435ed85128?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80')">
-                <div class="bg-gray-900 bg-opacity-50 flex items-center h-full">
-                    <div class="px-10 max-w-xl">
-                        <h2 class="text-2xl text-white font-semibold">Games</h2>
-                        <p class="mt-2 text-gray-400">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempore facere provident molestias ipsam sint voluptatum pariatur.</p>
-                        <button class="flex items-center mt-4 text-white text-sm uppercase font-medium rounded hover:underline focus:outline-none">
-                            <span>Shop Now</span>
-                            <svg class="h-5 w-5 mx-2" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        </div>
-
-        <section>
-            <div class="mx-auto max-w-screen-2xl px-4 py-16 sm:px-6 lg:px-8">
-              <div class="grid grid-cols-1 lg:h-screen lg:grid-cols-2">
-                <div class="relative z-10 lg:py-16">
-                  <div class="relative h-64 sm:h-80 lg:h-full">
-                    <img
-                      alt="Stream Overview"
-                      src="/img/"
-                      class="absolute inset-0 h-full w-full object-cover"
-                    />
-                  </div>
-                </div>
-          
-                <div class="relative flex items-center bg-gray-100">
-                  <span
-                    class="hidden lg:absolute lg:inset-y-0 lg:-left-16 lg:block lg:w-16 lg:bg-gray-100"
-                  ></span>
-          
-                  <div class="p-8 sm:p-16 lg:p-24">
-                    <h2 class="text-2xl font-bold sm:text-3xl">
-                      Stream Overview
-                    </h2>
-          
-                    <p class="mt-4 text-gray-600">
-                        Our stream will teach you the importance of self-defense. Our goal in self-defense is to survive and escape without injury by deterring or stopping aggressive behavior. It is not to win a fight or harm another person. In fact, the best defense is to avoid dangerous people and places in the first place. Our stream will teach you some basic skills that would help you in any violent situations, and we'll also share the types of self-defense tools that could help you as well.
-                    </p>
-          
-                    <a
-                      href="#"
-                      class="mt-8 inline-block rounded border border-indigo-600 bg-indigo-600 px-12 py-3 text-sm font-medium text-white hover:bg-transparent hover:text-indigo-600 focus:outline-none focus:ring active:text-indigo-500"
-                    >
-                      Get in Touch
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section> --> 
-          
-    <!--      <div class="bg-yellow-700 bg-opacity-10 px-5 py-10 min-h-screen">
-            <div class="container grid grid-cols-12 md:gap-10 font-serif mx-auto">
-              <div class="md:col-span-3 col-span-12 space-y-12 py-6 flex flex-col">
-                <div class="flex flex-col">
-                  <h3 class="flex items-center font-sans font-bold text-xs text-gray-600 text-opacity-40 mb-3.5">
-                    <span class="w-2 h-2 rounded-full bg-red-500 flex-shrink-0 mr-2.5"></span>
-                    HOT TOPIC
-                  </h3>
-                  <a href="#" class="font-medium hover:underline">Banjo 3 wolf moon occupy pork belly copper mug hella poutine, freegan poke</a>
-                  <p class="text-gray-600 text-opacity-40 text-xs mt-3.5 font-sans">36 minutes ago by <a href="#" class="text-blue-400 hover:underline">Atticus Finch</a></p>
-                </div>
-                <div class="flex flex-col">
-                  <h3 class="flex items-center font-sans font-bold text-xs text-gray-600 text-opacity-40 mb-3.5">
-                    <span class="w-2 h-2 rounded-full bg-red-500 flex-shrink-0 mr-2.5"></span>
-                    HOT TOPIC
-                  </h3>
-                  <a href="#" class="font-medium hover:underline">Synth kombucha celiac neutra blue bottle XOXO snackwave</a>
-                  <p class="text-gray-600 text-opacity-40 text-xs mt-3.5 font-sans">36 minutes ago by <a href="#" class="text-blue-400 hover:underline">Runseya Kurt</a></p>
-                </div>
-                <div class="flex flex-col">
-                  <h3 class="flex items-center font-sans font-bold text-xs text-gray-600 text-opacity-40 mb-3.5">
-                    <span class="w-2 h-2 rounded-full bg-red-500 flex-shrink-0 mr-2.5"></span>
-                    HOT TOPIC
-                  </h3>
-                  <a href="#" class="font-medium hover:underline">Celiac pinterest vaporware portland williamsburg edison bulb</a>
-                  <p class="text-gray-600 text-opacity-40 text-xs mt-3.5 font-sans">36 minutes ago by <a href="#" class="text-blue-400 hover:underline">Smyrna Riue</a></p>
-                </div>
-                <div class="flex flex-col w-full">
-                  <div class="w-full flex h-0.5 bg-yellow-700 bg-opacity-10">
-                    <div class="w-1/2 bg-red-500 h-full">
-                    </div>
-                  </div>
-                  <a href="#" class="font-sans text-xs font-bold pt-5 flex w-full">SEE MORE HOT TOPICS
-          
-                    <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round" class="w-3.5 ml-auto text-red-500">
-                      <line x1="5" y1="12" x2="19" y2="12"></line>
-                      <polyline points="12 5 19 12 12 19"></polyline>
-                    </svg></a>
-                </div>
-              </div>
-              <div class="xl:col-span-6 lg:col-span-5 md:col-span-9 col-span-12 relative bg-cover bg-no-repeat bg-center flex" style="background-image:url('https://images.unsplash.com/photo-1602196885350-c986e02d0b79?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=929&q=80')">
-                <span class="text-xs font-sans font-bold text-white absolute left-6 top-6 pb-2.5 border-b-2 border-red-500">ISTANBUL, TURKEY</span>
-                <div class="flex flex-col items-center justify-end text-center pt-48 flex-grow-1 px-12 pb-10 bg-gradient-to-t from-black">
-                  <h3 class="flex items-center font-sans font-bold text-xs text-red-500 mb-4">
-                    <span class="w-2 h-2 rounded-full bg-red-500 flex-shrink-0 mr-2.5"></span>
-                    IN THE MIDDLE
-                  </h3>
-                  <a href="#" class="text-white text-3xl hover:underline leading-10">Flannel single-origin coffee trust fund, ethical before they sold out tilde</a>
-                  <p class="text-white text-opacity-50 text-xs mt-4 font-sans">36 minutes ago by <a href="#" class="text-blue-400 hover:underline">Holden Caulfield</a></p>
-                </div>
-              </div>
-
-          
-            </div>
-          </div>    -->
-
-<!--AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA-->
-
-
-
-
 
 <!-- component -->
 
@@ -556,7 +534,7 @@
         <div id="content" class="bg-white/10 min-[768px]:col-span-8 max-[767px]:col-span-full rounded-lg p-6">
             <div id="24h">
                 <h1 class="font-bold py-4 uppercase">An INVITATION!</h1>
-                <div id="stats" class="grid gird-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div id="stats" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     <div class="bg-black/60 to-white/5 p-6 rounded-lg">
                         <div class="flex flex-row space-x-4 items-center">
                             <div id="stats-1">
@@ -633,127 +611,51 @@
         </div>
     </div>
 
-
-
-
-
-
-
-
-
-
-<!--
-
-    <div x-data="
-   {
-   openTab: 1,
-   activeClasses: 'bg-primary text-white',
-   inactiveClasses: 'text-body-color hover:bg-primary hover:text-white',
-   }
-   " class="w-full mb-14 grid place-items-center">
-   <div class="
-      flex flex-wrap
-      rounded-lg
-      py-3
-      px-4
-      ">
-      <a href="javascript:void(0)" @click="openTab = 1" :class="openTab === 1 ? activeClasses : inactiveClasses" class="text-sm md:text-base font-medium rounded-md py-3 px-4 lg:px-6 bg-gray-800 text-black">
-      Home
-      </a>
-      <a href="javascript:void(0)" @click="openTab = 2" :class="openTab === 2 ? activeClasses : inactiveClasses" class="text-sm md:text-base font-medium rounded-md py-3 px-4 lg:px-6 text-body-color hover:bg-gray-800 hover:text-gray-900">
-      About Us
-      </a>
-      <a href="javascript:void(0)" @click="openTab = 3" :class="openTab === 3 ? activeClasses : inactiveClasses" class="text-sm md:text-base font-medium rounded-md py-3 px-4 lg:px-6 text-body-color hover:bg-primary hover:text-black">
-      Our Team
-      </a>
-      <a href="javascript:void(0)" @click="openTab = 4" :class="openTab === 4 ? activeClasses : inactiveClasses" class="text-sm md:text-base font-medium rounded-md py-3 px-4 lg:px-6 text-body-color hover:bg-primary hover:text-black">
-      Company Details
-      </a>
-   </div>
-   <div>
-      <div x-show="openTab === 1" class="text-body-color text-base leading-relaxed p-6">
-         Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-         Officia nisi, doloribus nulla cumque molestias corporis eaque
-         harum vero! Quas sit odit optio debitis nulla quisquam,
-         dolorum quaerat animi iusto quod.
-      </div>
-      <div x-show="openTab === 2" class="text-body-color text-base leading-relaxed p-6" style="display: none;">
-         Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-         Officia nisi, doloribus nulla cumque molestias corporis eaque
-         harum vero! Quas sit odit optio debitis nulla quisquam,
-         dolorum quaerat animi iusto quod. Lorem ipsum dolor, sit amet
-         consectetur adipisicing elit. Unde ex dolorum voluptate
-         cupiditate adipisci doloremque, vel quam praesentium nihil
-         veritatis.
-      </div>
-      <div x-show="openTab === 3" class="text-body-color text-base leading-relaxed p-6" style="display: none;">
-         Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-         Officia nisi, doloribus nulla cumque molestias corporis eaque
-         harum vero! Quas sit odit optio debitis nulla quisquam,
-         dolorum quaerat animi iusto quod. <br>
-         <br>
-         Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-         Suscipit mollitia nam eligendi reprehenderit reiciendis saepe
-         laboriosam maiores voluptas. Quo, culpa amet fugiat ipsam sed
-         quod hic, veritatis ducimus recusandae repellat quasi eaque,
-         suscipit praesentium totam?
-      </div>
-      <div x-show="openTab === 4" class="text-body-color text-base leading-relaxed p-6" style="display: none;">
-         Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-         Officia nisi, doloribus nulla cumque molestias corporis eaque
-         harum vero! Quas sit odit optio debitis nulla quisquam,
-         dolorum quaerat animi iusto quod.
-      </div>
-   </div>
-</div>
-
--->
-
-
-
-
-
-
-
-
 <footer class="bg-gray-100 dark:bg-gray-900">
-    <div class="container m-auto space-y-8 px-6 py-16 text-gray-600 dark:text-gray-400 md:px-12 lg:px-20">
-      <div class="flex flex-wrap items-center justify-between gap-4 border-b border-gray-200 dark:border-gray-800 pb-8">
-        <img width="100" height="42" src="/img/teamlogo.png" alt="logo tailus" class="w-24">
-        <div class="flex gap-6">
-          <a href="#" target="blank" aria-label="github" class="hover:text-primary">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
-              <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path>
-            </svg>
-          </a>
-          <a href="#" target="blank" aria-label="twitter" class="hover:text-primary">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-twitter" viewBox="0 0 16 16">
-              <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"></path>
-            </svg>
-          </a>
-          <a href="#" target="blank" aria-label="medium" class="hover:text-primary">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-medium" viewBox="0 0 16 16">
-              <path d="M9.025 8c0 2.485-2.02 4.5-4.513 4.5A4.506 4.506 0 0 1 0 8c0-2.486 2.02-4.5 4.512-4.5A4.506 4.506 0 0 1 9.025 8zm4.95 0c0 2.34-1.01 4.236-2.256 4.236-1.246 0-2.256-1.897-2.256-4.236 0-2.34 1.01-4.236 2.256-4.236 1.246 0 2.256 1.897 2.256 4.236zM16 8c0 2.096-.355 3.795-.794 3.795-.438 0-.793-1.7-.793-3.795 0-2.096.355-3.795.794-3.795.438 0 .793 1.699.793 3.795z"></path>
-            </svg>
-          </a>
-        </div>
-      </div>
-      <div class="w-full -mx-6 lg:w-2/5">
-        <div class="px-6">
-            <div>
-                <p class="text-lg font-medium text-gray-700 dark:text-gray-100">Note:</p>
-            </div>
-
-            <p>Some of the features on this website is buggy with the Firefox browser.</p>
-        </div>
-    </div>
-      <div class="flex justify-between rounded-3xl bg-gray-800 px-4 py-3 text-gray-400">
-        <span>© Wondering Minds <span id="year">2022</span></span>
-        <a href="https://www.apache.org/licenses/LICENSE-2.0" class="font-medium transition hover:text-primary">Apache 2.0</a>
+  <div class="container m-auto space-y-8 px-6 py-16 text-gray-600 dark:text-gray-400 md:px-12 lg:px-20">
+    <div class="flex flex-wrap items-center justify-between gap-4 border-b border-gray-200 dark:border-gray-800 pb-8">
+      <img width="100" height="42" src="/img/teamlogo.png" alt="logo tailus" class="w-24">
+      <div class="flex gap-6">
+        <a href="https://github.com/LeonardAu/TheWonderingMinds_Website" target="blank" aria-label="github" class="hover:text-primary">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+            <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path>
+          </svg>
+        </a>
+        <a href="#" target="blank" aria-label="twitter" class="hover:text-primary">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-twitter" viewBox="0 0 16 16">
+            <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"></path>
+          </svg>
+        </a>
+        <a href="#" title="facebook" target="blank" aria-label="facebook">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor"
+            class="m-auto w-5"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"
+            ></path>
+          </svg>
+        </a>
       </div>
     </div>
-  </footer>
+    <div class="w-full -mx-6 ">
+      <div class="px-6">
+          <div>
+              <p class="text-lg font-medium text-gray-700 dark:text-gray-100"></p>
+          </div>
 
+          <p>Some of the features on this website is buggy with the Firefox and Safari browser.</p>
+      </div>
+  </div>
+    <div class="flex justify-between rounded-3xl bg-gray-800 px-4 py-3 text-gray-400">
+      <span>© Wondering Minds <span id="year">2022</span></span>
+      <a href="https://www.apache.org/licenses/LICENSE-2.0" class="font-medium transition hover:text-primary">Apache 2.0</a>
+    </div>
+  </div>
+</footer>
+</div>
 
 
 

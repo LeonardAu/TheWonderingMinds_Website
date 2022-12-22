@@ -1,3 +1,3 @@
-npm run build
-npm run watch 
+npm run buildtw
+npm run watchtw 
 
