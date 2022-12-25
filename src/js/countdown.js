@@ -1,7 +1,7 @@
 /** NOT THE FINAL VERSION */
 
 // Set the date we're counting down to
-var countDownDate = new Date("Dec 25, 2022 0:0:0").getTime();
+var countDownDate = new Date("Jan 01, 2023 0:0:0").getTime();
 
 // Update the count down every 1 second
 var x = setInterval(function () {
@@ -46,7 +46,7 @@ var x = setInterval(function () {
       .classList.add("finishedcontainer");
 
     document.getElementById("countdownuntil").innerHTML =
-      "MERRY<br>" + "<span class='text-white countdownB'>Christmas!</span>";
+      "HAPPY NEW YEAR<br>" + "<span class='text-white countdownB'>2023!</span>";
 
     document
       .getElementById("stats")
