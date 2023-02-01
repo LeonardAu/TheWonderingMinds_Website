@@ -4,15 +4,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="/css/main.css">
+    <title>Events</title>
+    <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="./css/events.css">
     <script defer src="https://unpkg.com/alpinejs-scroll-amount@latest/dist/scroll-amount.min.js" ></script> 
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    <link rel="icon" href="/img/teamlogo.png" type="image/png">
+    <link rel="icon" href="../img/teamlogo.png" type="image/png">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.15.4/css/all.css"/>
     <script src="https://cdn.jsdelivr.net/npm/ukiyojs@3.0.3/dist/ukiyo.min.js"></script>
-    <script src="./js/countdown.js"></script>
+    <!-- 
+        <script src="./js/countdown.js"></script> (disabled for now)
+    -->
     <style>
         .countdownA{
             -webkit-text-stroke: 1px #fff;
@@ -31,14 +33,14 @@
         ></div>
 
 <div x-data="{ mobileMenu: false }" class="font-sans antialiased">
-    <div class="min-h-screen bg-no-repeat bg-cover object-cover" style="background: url(/img/bg-stars.svg), linear-gradient(#c2a6ae,#20191A,#20191A);">
+    <div class="min-h-screen bg-no-repeat bg-cover object-cover" style="background: url(../img/bg-stars.svg), linear-gradient(#c2a6ae,#20191A,#20191A);">
         <nav class="bg-transparent">
             <!-- Primary Navigation Menu -->
             <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
                 <div class="flex justify-between h-16">
                     <div class="flex">
                         <!-- Logo -->
-                        <div class="flex items-center flex-shrink-0 select-none"><img src="/img/teamlogo.png" alt="" class="h-16 w-16"></div>
+                        <div class="flex items-center flex-shrink-0 select-none"><img src="../img/teamlogo.png" alt="" class="h-16 w-16"></div>
                         <!-- Navigation Links -->
                         <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex select-none"><a
                                 class="inline-flex items-center px-1 pt-1 text-sm font-medium -mx-4 leading-5 text-white font-Blanka"> Wondering Minds </a></div>
@@ -50,7 +52,7 @@
                         <div class="relative ml-3">
                             <div>
                                 <span class="inline-flex rounded-md">
-                                    <a href="/index.html"
+                                    <a href="../index.html"
                                         class="inline-flex items-center px-3 py-2 text-sm font-medium leading-4 transition duration-150 ease-in-out border border-transparent rounded-full text-gray-200 bg-[#20191A] hover:bg-gray-50 hover:text-gray-700 focus:outline-none active:bg-gray-50">Home
                                          
                                 </a>
@@ -108,7 +110,7 @@
                         href="#"> Wondering Minds </a></div>
             </div>
             <div class="pt-4 pb-1 border-t border-gray-200 dark:border-gray-600">
-                <a href="/index.html" class="flex items-center px-4 text-base font-medium transition duration-150 ease-in-out border-transparent text-gray-200 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300 focus:outline-none focus:text-gray-800 focus:bg-gray-50 focus:border-gray-300">
+                <a href="../index.html" class="flex items-center px-4 text-base font-medium transition duration-150 ease-in-out border-transparent text-gray-200 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300 focus:outline-none focus:text-gray-800 focus:bg-gray-50 focus:border-gray-300">
                     <div>
                         <div class="text-base font-medium">Home
                         </div>
@@ -149,7 +151,7 @@
             <div class="px-4 py-6 mx-auto max-w-7xl sm:px-6 lg:px-8">
                 <h2 class="text-xl font-semibold leading-tight text-gray-200">  <ol class="inline-flex items-center space-x-1 md:space-x-3">
                     <li class="inline-flex items-center">
-                      <a href="/index.html" class="text-sm inline-flex items-center text-white hover:text-gray-300">
+                      <a href="../index.html" class="text-sm inline-flex items-center text-white hover:text-gray-300">
                         <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"></path></svg>
                         Home
                       </a>
@@ -230,7 +232,7 @@
                 
                 <div id="content" class="bg-white/10 col-span-full rounded-lg p-6">
                     <div id="24h">
-                        <h1 class="font-bold py-4 uppercase text-center my-14 text-3xl text-transparent max-[639px]:text-[2em] sm:text-[5em] lg:text-[8em] leading-[.9em] countdownA" id="countdownuntil">Countdown Until <span class="text-white countdownB">2023</span></h1>
+                        <h1 class="font-bold py-4 uppercase text-center my-14 text-3xl text-transparent max-[639px]:text-[2em] sm:text-[5em] lg:text-[8em] leading-[.9em] countdownA" id="countdownuntil">Countdown <br> Until The <span class="text-white countdownB">Livesteam</span></h1>
                         <div id="stats" class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 place-items-center gap-6">
 
                             <div class="bg-black/60 min-[850px]:p-16 max-[849px]:p-12 rounded-lg text-center" id="initialcontainer1">
@@ -239,7 +241,7 @@
                                         <p class="text-teal-300 text-sm font-medium uppercase leading-4 text-center">&nbsp;Days&nbsp;</p>
                                         <p class="text-white font-bold text-2xl inline-flex items-center space-x-2">
 
-                                            <span id="days" class="text-3xl"></span>
+                                            <span id="days" class="text-3xl">?</span>
                                         </p>
                                     </div>
                                 </div>
@@ -250,7 +252,7 @@
                                         <p class="text-teal-300 text-sm font-medium uppercase leading-4 text-center">&nbsp;Hours&nbsp;</p>
                                         <p class="text-white font-bold text-2xl inline-flex items-center space-x-2">
 
-                                            <span id="hours" class="text-3xl"></span>
+                                            <span id="hours" class="text-3xl">?</span>
                                         </p>
                                     </div>
                                 </div>
@@ -262,7 +264,7 @@
                                         <p class="text-teal-300 text-sm font-medium uppercase leading-4 text-center">Minutes</p>
                                         <p class="text-white font-bold text-2xl inline-flex items-center space-x-2">
 
-                                            <span id="minutes" class="text-3xl"></span>
+                                            <span id="minutes" class="text-3xl">?</span>
                                         </p>
                                     </div>
                                 </div>
@@ -274,7 +276,7 @@
                                         <p class="text-teal-300 text-sm font-medium uppercase leading-4 text-center">Seconds</p>
                                         <p class="text-white font-bold text-2xl inline-flex items-center space-x-2">
 
-                                            <span id="seconds" class="text-3xl"></span>
+                                            <span id="seconds" class="text-3xl">?</span>
                                         </p>
                                     </div>
                                 </div>
@@ -295,7 +297,7 @@
         <p>Hello and we are The Wondering Minds Group! We wanted to invite you to watch our live stream about the important things to know about self-defense and how self-defense skills can increase teenagers' self-confidence. Be sure to check out our channel for updates on when we will be streaming. Our target audience is around 100 people, and we would love for you to be a part of it. Thank you for considering joining us, we really appreciate it!</p>
                     </div>
                     <p class="text-sm text-left text-gray-200">--Regards, Group 10</p> <br>
-        <img src="/img/Group10InvitationPoster.png" alt="invitationcard.png">
+        <img src="../img/Group10InvitationPoster.png" alt="invitationcard.png">
         <br>
                 </div>
                         </div>
@@ -314,7 +316,7 @@
 <footer class="bg-gray-100 dark:bg-gray-900">
     <div class="container m-auto space-y-8 px-6 py-16 text-gray-600 dark:text-gray-400 md:px-12 lg:px-20">
       <div class="flex flex-wrap items-center justify-between gap-4 border-b border-gray-200 dark:border-gray-800 pb-8">
-        <img width="100" height="42" src="/img/teamlogo.png" alt="logo tailus" class="w-24">
+        <img width="100" height="42" src="../img/teamlogo.png" alt="logo tailus" class="w-24">
         <div class="flex gap-6">
           <a href="https://github.com/LeonardAu/TheWonderingMinds_Website" target="blank" aria-label="github" class="hover:text-primary">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
@@ -356,6 +358,32 @@
     </div>
   </footer>
 </div>
+<audio autoplay loop id="verygreatmusic">
+  </audio>
+<script id="theoneandonly"></script>
+<script>
+console.warn('Enter "command.help()" for a secret!');
+    let command = {
+    help() {
+        console.log("Hello! Welcome to the console. Let me give you the available commands for now.\ncommand.activatetimer() - Activate the countdown for Christmas.\ncommand.playmusic() - Plays a lofi music looped, to stop the loop type 'command.unloop()'.");
+    },
+    activatetimer() {
+        document.getElementById("theoneandonly").setAttribute("src","./js/countdown.js");
+        console.log("The timer has been activated; Countdown to Christmas has started.");
+    },
+    playmusic(){
+        document.getElementById("verygreatmusic").innerHTML =
+      "<source src='js/1.mp3' type='audio/mp3'/>";
+      console.log("Lazy Afternoon by Purrple Cat | https://purrplecat.com/\nMusic promoted by https://www.chosic.com/free-music/all/\nCreative Commons CC BY-SA 3.0\nhttps://creativecommons.org/licenses/by-sa/3.0/");
+      console.log("Type command.unloop() to remove the loop.\nRefresh the page to stop the music.");
+    },
+    unloop(){
+    document.getElementById("verygreatmusic").removeAttribute('loop');
+    console.log("You have unlooped the music, refresh the page to start it again.");
+    },
+};
+
+</script>
   
   
 </body>

@@ -26,7 +26,7 @@
 
       <!--NAVBAR-->
 
-      <nav data-aos="fade-down" x-data="{ isOpen: false }" class="absolute top-0 w-full bg-transparent flex justify-center items-center z-20" style="height: 8% ;">
+      <nav x-data="{ isOpen: false }" class="absolute top-0 w-full bg-transparent flex justify-center items-center z-20" style="height: 8% ;">
         <div class="flex items-center justify-between">
   
         <!-- Mobile menu button -->
@@ -62,7 +62,7 @@
 
 <div id="parallaxfx" class="relative h-[80vh] w-full bg-cover bg-no-repeat grid place-items-center" style="background-image: url(./img/galactic.jpg)">
     
-  <div class="relative text-center top-80 opacity-100 welcometext" data-aos="fade-up">
+  <div class="relative text-center top-80 opacity-100 welcometext">
     <h1 class="text-center text-5xl font-bold mb-2 text-white titletext max-[525px]:hidden">Welcome to 
         <span class="magic select-none">
             <span class="magic-star">
@@ -404,7 +404,7 @@ method of content, rather than the content itself.
   </section>
 
   <!--CONTENT-->
-  <section class="bg-gradient-to-b from-[#20191A] via-[#20191A] to-[#c2a6ae]">
+  <section class="bg-[#20191A]">
   <div class="container mx-auto px-6 py-10">
       <div class="text-center">
       <h1 class="text-3xl font-semibold capitalize text-gray-800 dark:text-white lg:text-4xl">Our Latest Content</h1>
@@ -516,19 +516,16 @@ method of content, rather than the content itself.
   
 
 <!-- component -->
-
-
-
   
-  
-  
-
-
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+  <!--
+
   <script>
     AOS.init({once: true});
   </script>
 
+-->
 
   <script>    
   /**

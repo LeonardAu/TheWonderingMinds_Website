@@ -163,3 +163,7 @@ for (const star of document.getElementsByClassName("magic-star")) {
   document.getElementById("quoteauthor").innerHTML = quote.author;
   document.getElementById("quotetitle").innerHTML = quote.title;
 })();
+console.log(
+  "%c Wondering Minds ",
+  "color: #fff; font-size: 30px; font-weight: 200; font-family:'Blanka'; background: linear-gradient(#c2a6ae,#c2a6ae, #20191a);"
+);
