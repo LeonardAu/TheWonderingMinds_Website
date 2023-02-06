@@ -105,7 +105,3 @@
 .glowingeffect:hover{
   box-shadow: 0 0 5px white, 0 0 10px white, 0 0 15px white;
 }
-
-::selection {
-  background: #2b2b2b;
-}

@@ -44,3 +44,7 @@
 ::-webkit-scrollbar-thumb:hover {
     background-color: rgba(0,0,0,.6);
 }
+
+::selection {
+    background: #2b2b2b;
+  }

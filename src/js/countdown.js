@@ -1,7 +1,7 @@
 /** NOT THE FINAL VERSION */
 
 // Set the date we're counting down to
-var countDownDate = new Date("Dec 25, 2023 0:0:0").getTime();
+var countDownDate = new Date("Feb 7, 2023 15:10:0").getTime();
 
 // Update the count down every 1 second
 var x = setInterval(function () {
@@ -46,8 +46,9 @@ var x = setInterval(function () {
       .classList.add("finishedcontainer");
 
     document.getElementById("countdownuntil").innerHTML =
-      "NOW<br>" + "<span class='text-white countdownB'>STREAMING!</span>";
-    //add a "watch our stream ____"(link) here. Or add a Youtube embed.
+      "NOW<br>" +
+      "<span class='text-white countdownB'>STREAMING!</span>" +
+      "<a href='https://www.facebook.com/people/WonderMinds/100089276150786/' class='text-2xl'><br>Click here to watch our Stream!</a>";
 
     document
       .getElementById("stats")
