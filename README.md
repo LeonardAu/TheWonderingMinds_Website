@@ -68,7 +68,7 @@ Note: This is not the complete list of where we got our images; it's only the ma
 
 - [x] Quarter 1
 - [x] Quarter 2
-- [ ] Quarter 3
+- [x] Quarter 3
 - [ ] Quarter 4
 
 <br>

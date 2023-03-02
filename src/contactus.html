@@ -1,237 +1,324 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact Form</title>
-    <link rel="icon" href="../img/teamlogo.png" type="image/png">
-    <link rel="stylesheet" href="../css/main.css">
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.15.4/css/all.css">
-    <script defer src="https://unpkg.com/alpinejs-scroll-amount@latest/dist/scroll-amount.min.js" ></script> 
-    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link rel="icon" href="../img/teamlogo.png" type="image/png" />
+    <link rel="stylesheet" href="../css/main.css" />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.15.4/css/all.css"
+    />
+    <script
+      defer
+      src="https://unpkg.com/alpinejs-scroll-amount@latest/dist/scroll-amount.min.js"
+    ></script>
+    <script
+      defer
+      src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
     <!--AOSJS-->
-</head>
-<body>
-  <div x-data="{ scrollPos: {} }" x-init="scrollPos = $scrollAmount" x-on:scroll.window="scrollPos = $scrollAmount">
-  
+  </head>
+  <body>
     <div
-      class="fixed inset-x-0 top-0 h-1 z-[1000] bg-[#c2a6ae] ease-[linear] transition-[width]"
-      :style="{ width: `${scrollPos.scrollPercent}%` }"
-    ></div>
-<!--MAIN THING/CONTACT FORM-->
-<section class="bg-[#20191A]">
-    <div class="lg:grid lg:min-h-screen lg:grid-cols-12">
-      <section
-        class="relative flex h-32 items-end bg-gray-900 lg:col-span-5 lg:h-full xl:col-span-6"
-      >
-        <img
-          alt="Night"
-          id="backgroundimg"
-          class="absolute inset-0 h-full w-full object-cover bg-cover bg-no-repeat opacity-80"
-        />
-  
-        <div class="hidden lg:relative lg:block lg:p-12">
-          <a class="block text-white" href="/">
-            <span class="sr-only">Home</span>
-            <i class="fas fa-id-card-alt text-5xl"></i>
-            <!-- <img src="../img/teamlogo.png" class="h-24 w-24"> -->
-          </a>
-  
-          <h2 class="mt-6 text-2xl font-bold text-white sm:text-3xl md:text-4xl">
-            Contact Form
-          </h2>
-  
-          <p class="mt-4 leading-relaxed text-white/90">
-            Hello! Welcome to the contact form. If you have any issues or greetings feel free to fill out the form!
-          </p>
+      x-data="{ scrollPos: {} }"
+      x-init="scrollPos = $scrollAmount"
+      x-on:scroll.window="scrollPos = $scrollAmount"
+    >
+      <div
+        class="fixed inset-x-0 top-0 h-1 z-[1000] bg-[#c2a6ae] ease-[linear] transition-[width]"
+        :style="{ width: `${scrollPos.scrollPercent}%` }"
+      ></div>
+      <!--MAIN THING/CONTACT FORM-->
+      <section class="bg-[#20191A]">
+        <div class="lg:grid lg:min-h-screen lg:grid-cols-12">
+          <section
+            class="relative flex h-32 items-end bg-gray-900 lg:col-span-5 lg:h-full xl:col-span-6"
+          >
+            <img
+              alt="Night"
+              id="backgroundimg1"
+              class="absolute inset-0 h-full w-full object-cover bg-cover bg-no-repeat opacity-0"
+              src="../img/6060317.jpg"
+            />
+            <img
+              alt="Night"
+              id="backgroundimg2"
+              class="absolute inset-0 h-full w-full object-cover bg-cover bg-no-repeat opacity-0"
+              src="../img/daniel-leone-g30P1zcOzXo-unsplash.jpg"
+            />
+            <img
+              alt="Night"
+              id="backgroundimg3"
+              class="absolute inset-0 h-full w-full object-cover bg-cover bg-no-repeat opacity-0"
+              src="../img/4482404.jpg"
+            />
+            <video
+              id="video02"
+              playsinline
+              muted
+              class="w-full h-full absolute inset-0 object-cover opacity-0"
+            >
+              <source
+                class="w-full"
+                src="https://www.w3schools.com/html/mov_bbb.mp4"
+                type="video/mp4"
+              />
+            </video>
+
+            <div class="hidden lg:relative lg:block lg:p-12">
+              <a class="block text-white" href="/">
+                <span class="sr-only">Home</span>
+                <i class="fas fa-id-card-alt text-5xl"></i>
+                <!-- <img src="../img/teamlogo.png" class="h-24 w-24"> -->
+              </a>
+
+              <h2
+                class="mt-6 text-2xl font-bold text-white sm:text-3xl md:text-4xl"
+              >
+                Contact Form
+              </h2>
+
+              <p class="mt-4 leading-relaxed text-white/90">
+                Hello! Welcome to the contact form. If you have any issues or
+                greetings feel free to fill out the form!
+              </p>
+            </div>
+          </section>
+
+          <main
+            aria-label="Main"
+            class="flex items-center justify-center px-8 py-8 sm:px-12 lg:col-span-7 lg:py-12 lg:px-16 xl:col-span-6"
+          >
+            <div class="max-w-xl lg:max-w-3xl">
+              <div class="relative -mt-16 block lg:hidden">
+                <a
+                  class="inline-flex h-16 w-16 items-center justify-center rounded-full bg-white sm:h-20 sm:w-20"
+                  href="/"
+                >
+                  <span class="sr-only">Home</span>
+                  <i class="fas fa-id-card-alt text-4xl"></i>
+                </a>
+
+                <h1
+                  class="mt-2 text-2xl font-bold text-gray-900 dark:text-white sm:text-3xl md:text-4xl"
+                >
+                  Contact Form
+                </h1>
+
+                <p
+                  class="mt-4 leading-relaxed text-gray-500 dark:text-gray-400"
+                >
+                  Hello! Welcome to the contact form. If you have any issues or
+                  greetings feel free to fill out the form!
+                </p>
+              </div>
+
+              <form
+                method="POST"
+                action="https://script.google.com/macros/s/AKfycbxJwiaspD37l_5wEvJ5GYzQ9bZy9frgAsRgHq9gtk1yR711s3SsJ4WwYh_T3CEKPMGP/exec"
+                class="mt-8 grid grid-cols-6 gap-6"
+                id="my-form"
+              >
+                <div class="col-span-6 sm:col-span-3">
+                  <label
+                    for="FirstName"
+                    class="block text-sm font-medium text-gray-700 dark:text-gray-200"
+                  >
+                    First Name
+                  </label>
+
+                  <input
+                    type="text"
+                    id="FirstName"
+                    name="First Name"
+                    class="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm dark:border-gray-700 dark:bg-gray-800 dark:text-gray-200"
+                    placeholder="First Name"
+                  />
+                </div>
+
+                <div class="col-span-6 sm:col-span-3">
+                  <label
+                    for="LastName"
+                    class="block text-sm font-medium text-gray-700 dark:text-gray-200"
+                  >
+                    Last Name
+                  </label>
+
+                  <input
+                    type="text"
+                    id="LastName"
+                    name="Last Name"
+                    class="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm dark:border-gray-700 dark:bg-gray-800 dark:text-gray-200"
+                    placeholder="Last Name"
+                  />
+                </div>
+
+                <div class="col-span-6">
+                  <label
+                    for="Email"
+                    class="block text-sm font-medium text-gray-700 dark:text-gray-200"
+                  >
+                    Email
+                  </label>
+
+                  <input
+                    type="email"
+                    id="Email"
+                    name="Email"
+                    class="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm dark:border-gray-700 dark:bg-gray-800 dark:text-gray-200"
+                    placeholder="Email"
+                  />
+                </div>
+
+                <input disabled type="hidden" id="Date" name="Date" />
+
+                <div class="col-span-6">
+                  <label
+                    for="Message"
+                    class="block text-sm font-medium text-gray-700 dark:text-gray-200"
+                  >
+                    Message
+                  </label>
+
+                  <textarea
+                    class="w-full rounded-lg border-gray-200 p-3 text-sm mt-1 bg-white text-gray-700 shadow-sm dark:border-gray-700 dark:bg-gray-800 dark:text-gray-200"
+                    placeholder="Message"
+                    rows="8"
+                    id="message"
+                    name="Message"
+                  ></textarea>
+                </div>
+
+                <div class="col-span-6">
+                  <p class="text-sm text-gray-500 dark:text-gray-400">
+                    Everything you submitted here is documented, please maintain
+                    professionalism.
+                  </p>
+                  <p class="text-sm text-gray-400 underline">
+                    Do not submit sensitive information!
+                  </p>
+                </div>
+
+                <div class="col-span-6 sm:flex sm:items-center sm:gap-4">
+                  <button
+                    type="submit"
+                    value="Submit"
+                    class="inline-block shrink-0 rounded-md border border-[#AC4139] bg-[#AC4139] px-12 py-3 text-sm font-medium text-white transition hover:bg-transparent focus:outline-none focus:ring active:text-white hover:bg-[#91332c] hover:text-white"
+                  >
+                    Submit
+                  </button>
+
+                  <p
+                    class="mt-4 text-sm text-gray-500 dark:text-gray-400 sm:mt-0"
+                  >
+                    Done submitting?
+                    <a
+                      href="../index.html"
+                      class="text-gray-700 underline dark:text-gray-200"
+                      >Go back</a
+                    >.
+                  </p>
+                </div>
+              </form>
+            </div>
+          </main>
         </div>
       </section>
-  
-      <main
-        aria-label="Main"
-        class="flex items-center justify-center px-8 py-8 sm:px-12 lg:col-span-7 lg:py-12 lg:px-16 xl:col-span-6"
-      >
-        <div class="max-w-xl lg:max-w-3xl">
-          <div class="relative -mt-16 block lg:hidden">
-            <a
-              class="inline-flex h-16 w-16 items-center justify-center rounded-full bg-white sm:h-20 sm:w-20"
-              href="/"
-            >
-              <span class="sr-only">Home</span>
-              <i class="fas fa-id-card-alt text-4xl"></i>
-            </a>
-  
-            <h1
-              class="mt-2 text-2xl font-bold text-gray-900 dark:text-white sm:text-3xl md:text-4xl"
-            >
-            Contact Form
-            </h1>
-  
-            <p class="mt-4 leading-relaxed text-gray-500 dark:text-gray-400">
-              Hello! Welcome to the contact form. If you have any issues or greetings feel free to fill out the form!
-            </p>
-          </div>
-  
-          <form method="POST" action="https://script.google.com/macros/s/AKfycbxJwiaspD37l_5wEvJ5GYzQ9bZy9frgAsRgHq9gtk1yR711s3SsJ4WwYh_T3CEKPMGP/exec" class="mt-8 grid grid-cols-6 gap-6" id="my-form">
-            <div class="col-span-6 sm:col-span-3">
-              <label
-                for="FirstName"
-                class="block text-sm font-medium text-gray-700 dark:text-gray-200"
-              >
-                First Name
-              </label>
-  
-              <input
-                type="text"
-                id="FirstName"
-                name="First Name"
-                class="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm dark:border-gray-700 dark:bg-gray-800 dark:text-gray-200"
-                placeholder="First Name"
-                />
-            </div>
-  
-            <div class="col-span-6 sm:col-span-3">
-              <label
-                for="LastName"
-                class="block text-sm font-medium text-gray-700 dark:text-gray-200"
-              >
-                Last Name
-              </label>
-  
-              <input
-                type="text"
-                id="LastName"
-                name="Last Name"
-                class="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm dark:border-gray-700 dark:bg-gray-800 dark:text-gray-200"
-                placeholder="Last Name"
-                />
-            </div>
-  
-            <div class="col-span-6">
-              <label
-                for="Email"
-                class="block text-sm font-medium text-gray-700 dark:text-gray-200"
-              >
-                Email
-              </label>
-  
-              <input
-                type="email"
-                id="Email"
-                name="Email"
-                class="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm dark:border-gray-700 dark:bg-gray-800 dark:text-gray-200"
-                placeholder="Email"
-                />
-            </div>
 
-                <input disabled
-                  type="hidden"
-                  id="Date"
-                  name="Date"
-                />
-  
-            <div class="col-span-6">
-                <label
-                  for="Message"
-                  class="block text-sm font-medium text-gray-700 dark:text-gray-200"
+      <!--FOOTER-->
+
+      <footer class="bg-gray-100 dark:bg-gray-900">
+        <div
+          class="container m-auto space-y-8 px-6 py-16 text-gray-600 dark:text-gray-400 md:px-12 lg:px-20"
+        >
+          <div
+            class="flex flex-wrap items-center justify-between gap-4 border-b border-gray-200 dark:border-gray-800 pb-8"
+          >
+            <img
+              width="100"
+              height="42"
+              src="../img/teamlogo.png"
+              alt="logo tailus"
+              class="w-24"
+            />
+            <div class="flex gap-6">
+              <a
+                href="https://github.com/LeonardAu/TheWonderingMinds_Website"
+                target="blank"
+                aria-label="github"
+                class="hover:text-primary"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  fill="currentColor"
+                  class="bi bi-github"
+                  viewBox="0 0 16 16"
                 >
-                  Message
-                </label>
-    
-                <textarea
-                class="w-full rounded-lg border-gray-200 p-3 text-sm mt-1 bg-white text-gray-700 shadow-sm dark:border-gray-700 dark:bg-gray-800 dark:text-gray-200"
-                placeholder="Message"
-                rows="8"
-                id="message"
-                name="Message"
-              ></textarea>
-              </div>
-  
-
-  
-            <div class="col-span-6">
-              <p class="text-sm text-gray-500 dark:text-gray-400">
-                Everything you submitted here is documented, please maintain professionalism.
-                
-              </p>
-              <p class="text-sm text-gray-400 underline">
-                Do not submit sensitive information!
-                
-              </p>
-            </div>
-  
-            <div class="col-span-6 sm:flex sm:items-center sm:gap-4">
-              <button type="submit" value="Submit"
-                class="inline-block shrink-0 rounded-md border border-[#AC4139] bg-[#AC4139] px-12 py-3 text-sm font-medium text-white transition hover:bg-transparent focus:outline-none focus:ring active:text-white hover:bg-[#91332c] hover:text-white"
-              >
-                Submit
-              </button>
-  
-              <p class="mt-4 text-sm text-gray-500 dark:text-gray-400 sm:mt-0">
-                Done submitting?
-                <a href="../index.html" class="text-gray-700 underline dark:text-gray-200"
-                  >Go back</a
-                >.
-              </p>
-            </div>
-          </form>
-        </div>
-      </main>
-    </div>
-  </section>
-
-
-  <!--FOOTER-->
-
-  <footer class="bg-gray-100 dark:bg-gray-900">
-    <div class="container m-auto space-y-8 px-6 py-16 text-gray-600 dark:text-gray-400 md:px-12 lg:px-20">
-      <div class="flex flex-wrap items-center justify-between gap-4 border-b border-gray-200 dark:border-gray-800 pb-8">
-        <img width="100" height="42" src="../img/teamlogo.png" alt="logo tailus" class="w-24">
-        <div class="flex gap-6">
-          <a href="https://github.com/LeonardAu/TheWonderingMinds_Website" target="blank" aria-label="github" class="hover:text-primary">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
-              <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path>
-            </svg>
-          </a>
-        <!-- 
+                  <path
+                    d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"
+                  ></path>
+                </svg>
+              </a>
+              <!-- 
             <a href="#" target="blank" aria-label="twitter" class="hover:text-primary">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-twitter" viewBox="0 0 16 16">
               <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"></path>
             </svg>
           </a> 
-        -->  
-          <a href="https://www.facebook.com/people/WonderMinds/100089276150786/" title="facebook" target="blank" aria-label="facebook">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="currentColor"
-              class="m-auto w-5"
-              viewBox="0 0 16 16"
-            >
-              <path
-                d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"
-              ></path>
-            </svg>
-          </a>
-        </div>
-      </div>
-      <div class="w-full -mx-6 ">
-        <div class="px-6">
-            <div>
-                <p class="text-lg font-medium text-gray-700 dark:text-gray-100"></p>
+        -->
+              <a
+                href="https://www.facebook.com/people/WonderMinds/100089276150786/"
+                title="facebook"
+                target="blank"
+                aria-label="facebook"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="currentColor"
+                  class="m-auto w-5"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"
+                  ></path>
+                </svg>
+              </a>
             </div>
-  
-            <p>Some of the features on this website is buggy with the Firefox and Safari browser.</p>
+          </div>
+          <div class="w-full -mx-6">
+            <div class="px-6">
+              <div>
+                <p
+                  class="text-lg font-medium text-gray-700 dark:text-gray-100"
+                ></p>
+              </div>
+
+              <p>
+                Some of the features on this website is buggy with the Firefox
+                and Safari browser.
+              </p>
+            </div>
+          </div>
+          <div
+            class="flex justify-between rounded-3xl bg-gray-800 px-4 py-3 text-gray-400"
+          >
+            <span>© Wondering Minds <span id="year">2022</span></span>
+            <a
+              href="https://www.apache.org/licenses/LICENSE-2.0"
+              class="font-medium transition hover:text-primary"
+              >Apache 2.0</a
+            >
+          </div>
         </div>
+      </footer>
     </div>
-      <div class="flex justify-between rounded-3xl bg-gray-800 px-4 py-3 text-gray-400">
-        <span>© Wondering Minds <span id="year">2022</span></span>
-        <a href="https://www.apache.org/licenses/LICENSE-2.0" class="font-medium transition hover:text-primary">Apache 2.0</a>
-      </div>
-    </div>
-  </footer>
-</div>
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
-  <script src="./js/contactus.js"></script>
-</body>
+    <script src="https://unpkg.com/gsap@3.11.4/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <script src="./js/contactus.js"></script>
+  </body>
 </html>
