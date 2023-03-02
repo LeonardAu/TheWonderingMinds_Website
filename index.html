@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html style="scroll-behavior: smooth">
   <head>
@@ -938,3 +939,945 @@
     <script src="app.js"></script>
   </body>
 </html>
+=======
+<!DOCTYPE html>
+<html style="scroll-behavior: smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link rel="icon" href="./img/teamlogo.png" type="image/png" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="style.css" />
+    <script
+      defer
+      src="https://unpkg.com/alpinejs-scroll-amount@latest/dist/scroll-amount.min.js"
+    ></script>
+    <script
+      defer
+      src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.15.4/css/all.css"
+    />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  </head>
+  <body>
+    <div
+      x-data="{ scrollPos: {} }"
+      x-init="scrollPos = $scrollAmount"
+      x-on:scroll.window="scrollPos = $scrollAmount"
+    >
+      <div
+        class="fixed inset-x-0 top-0 h-1 z-[1000] bg-[#c2a6ae] ease-[linear] transition-[width]"
+        :style="{ width: `${scrollPos.scrollPercent}%` }"
+      ></div>
+
+      <!--NAVBAR-->
+
+      <nav
+        x-data="{ isOpen: false }"
+        class="absolute top-0 w-full bg-transparent flex justify-center items-center z-20"
+        style="height: 8%"
+      >
+        <div class="flex items-center justify-between">
+          <!-- Mobile menu button -->
+          <div class="flex lg:hidden py-5 px-5 bg-[#20191A] rounded-3xl">
+            <button
+              x-cloak
+              @click="isOpen = !isOpen"
+              type="button"
+              class="focus:outline-none text-gray-200 hover:text-gray-400 focus:text-gray-400"
+              aria-label="toggle menu"
+            >
+              <svg
+                x-show="!isOpen"
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M4 8h16M4 16h16"
+                />
+              </svg>
+
+              <svg
+                x-show="isOpen"
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Mobile Menu open: "block", Menu closed: "hidden" -->
+        <div
+          x-cloak
+          :class="[isOpen ? 'translate-x-0 opacity-100 ' : 'opacity-0 -translate-x-full']"
+          class="absolute inset-x-0 z-20 w-full px-6 py-4 text-left shadow-md transition-all duration-300 ease-in-out bg-[#7F5153] lg:relative lg:top-0 flex lg:w-auto lg:translate-x-0 lg:items-center lg:bg-transparent lg:p-0 lg:opacity-100 lg:shadow-none lg:dark:bg-transparent"
+          id="thenavbarelite"
+        >
+          <div
+            class="lg:-px-8 flex flex-col space-y-4 text-left lg:mt-0 lg:flex-row lg:space-y-0 font-PolySansS"
+          >
+            <a
+              class="list-none transform transition-colors duration-300 text-gray-200 hover:text-[#c2a6ae] lg:mx-8 font-Blanka min-[1024px]:hidden"
+              href="#"
+              >Wondering Minds</a
+            >
+            <a
+              class="list-none transform transition-colors duration-300 text-gray-200 hover:text-[#8ca1d2] lg:mx-8"
+              href="/index.html"
+              >Home</a
+            >
+            <a
+              class="list-none transform transition-colors duration-300 text-gray-200 hover:text-[#8ca1d2] lg:mx-8"
+              href="#content"
+              >Content</a
+            >
+            <a
+              class="list-none transform transition-colors duration-300 text-gray-200 hover:text-[#c2a6ae] lg:mx-8 font-Blanka max-[1023px]:hidden select-none"
+              >Wondering Minds</a
+            >
+            <a
+              class="list-none transform transition-colors duration-300 text-gray-200 hover:text-[#8ca1d2] lg:mx-8"
+              href="./src/contactus.html"
+              >Contact Us</a
+            >
+            <a
+              class="list-none transform transition-colors duration-300 text-gray-200 hover:text-[#8ca1d2] lg:mx-8"
+              href="https://github.com/LeonardAu/TheWonderingMinds_Website/blob/master/README.md"
+              target="_blank"
+              rel="noopener noreferrer"
+              >About</a
+            >
+            <!--<a class="list-none transform text-gray-700 transition-colors duration-300 hover:text-blue-500 dark:text-gray-200 dark:hover:text-blue-400 lg:mx-8" href="#">Timeline</a>-->
+          </div>
+        </div>
+      </nav>
+
+      <!--HEADER-->
+
+      <div
+        id="parallaxfx"
+        class="relative h-[80vh] w-full 2xl:bg-cover bg-no-repeat grid place-items-center"
+        style="
+          background-image: url(./img/galactic.jpg);
+          background-color: #20191a;
+        "
+      >
+        <div class="relative text-center top-80 opacity-100 welcometext">
+          <h1
+            class="text-center text-5xl font-bold mb-2 text-white titletext max-[525px]:hidden font-PolySansB"
+          >
+            Welcome to
+            <span class="magic select-none">
+              <span class="magic-star">
+                <svg viewBox="0 0 512 512">
+                  <path
+                    d="M512 255.1c0 11.34-7.406 20.86-18.44 23.64l-171.3 42.78l-42.78 171.1C276.7 504.6 267.2 512 255.9 512s-20.84-7.406-23.62-18.44l-42.66-171.2L18.47 279.6C7.406 276.8 0 267.3 0 255.1c0-11.34 7.406-20.83 18.44-23.61l171.2-42.78l42.78-171.1C235.2 7.406 244.7 0 256 0s20.84 7.406 23.62 18.44l42.78 171.2l171.2 42.78C504.6 235.2 512 244.6 512 255.1z"
+                  />
+                </svg>
+              </span>
+              <span class="magic-star">
+                <svg viewBox="0 0 512 512">
+                  <path
+                    d="M512 255.1c0 11.34-7.406 20.86-18.44 23.64l-171.3 42.78l-42.78 171.1C276.7 504.6 267.2 512 255.9 512s-20.84-7.406-23.62-18.44l-42.66-171.2L18.47 279.6C7.406 276.8 0 267.3 0 255.1c0-11.34 7.406-20.83 18.44-23.61l171.2-42.78l42.78-171.1C235.2 7.406 244.7 0 256 0s20.84 7.406 23.62 18.44l42.78 171.2l171.2 42.78C504.6 235.2 512 244.6 512 255.1z"
+                  />
+                </svg>
+              </span>
+              <span class="magic-star">
+                <svg viewBox="0 0 512 512">
+                  <path
+                    d="M512 255.1c0 11.34-7.406 20.86-18.44 23.64l-171.3 42.78l-42.78 171.1C276.7 504.6 267.2 512 255.9 512s-20.84-7.406-23.62-18.44l-42.66-171.2L18.47 279.6C7.406 276.8 0 267.3 0 255.1c0-11.34 7.406-20.83 18.44-23.61l171.2-42.78l42.78-171.1C235.2 7.406 244.7 0 256 0s20.84 7.406 23.62 18.44l42.78 171.2l171.2 42.78C504.6 235.2 512 244.6 512 255.1z"
+                  />
+                </svg>
+              </span>
+              <span class="magic-text">The Wondering Minds'</span>
+            </span>
+            Website!
+          </h1>
+
+          <h1
+            class="text-center text-5xl font-bold mb-2 text-white titletext min-[526px]:hidden"
+          >
+            Welcome to
+            <p
+              class="text-transparent bg-clip-text bg-gradient-to-r from-[#f48fb1] via-[#673ab7] to-[#7b1fa2]"
+            >
+              The Wondering Minds'
+            </p>
+            Website!
+          </h1>
+          <h3 class="text-center text-xl mb-8 text-gray-200 font-OpenSans">
+            To get started, press the button below.
+          </h3>
+
+          <div>
+            <button
+              type="button"
+              onclick="scrollInto()"
+              class="button text-center bg-white font-bold rounded-full py-4 px-8 shadow-lg uppercase tracking-wider hover:border-transparent transition-all glowingeffect duration-500"
+            >
+              <svg
+                class="w-6 h-6 text-black"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        class="min-h-screen"
+        style="
+          background: linear-gradient(
+              transparent,
+              #ac4139,
+              transparent,
+              transparent,
+              transparent
+            ),
+            url(../img/noisegradient3.jpg);
+        "
+      >
+        <section class="bg-transparent">
+          <div
+            id="themainheader"
+            class="container mx-auto px-6 py-16 text-center"
+          >
+            <div class="mx-auto max-w-lg">
+              <h1
+                class="text-3xl font-bold text-white lg:text-4xl font-Literata"
+              >
+                Our Goal
+              </h1>
+              <p class="mt-6 text-white font-OpenSans">
+                We want to provide students with quality education online. We
+                use the new technology available, and employ fun ways to make
+                learning fun and interactive. We provide students with basic
+                resources, support, and high-quality educational content.
+              </p>
+            </div>
+
+            <div class="mt-10 flex justify-center">
+              <img
+                class="h-96 w-full rounded-xl object-cover lg:w-4/5 2xl:bg-cover bg-no-repeat"
+                src="./img/ourgoal.jpg"
+              />
+            </div>
+          </div>
+        </section>
+
+        <!--HAVING AN <hr/> WOULD DEFINITELY BE USEFUL HERE-->
+        <!--DON'T CLICK THIS BUTTON FOR TOO LONG!-->
+        <hr />
+        <div
+          x-data="{ pulsingCircle: 0 }"
+          class="absolute w-full bg-transparent flex justify-center items-center -my-3.5"
+        >
+          <div
+            x-on:click="pulsingCircle += 1"
+            x-show="pulsingCircle < 10"
+            x-cloak
+            class="button text-center bg-white font-bold rounded-full py-3.5 px-3.5 shadow-lg uppercase tracking-wider hover:border-transparent hover:bg-gray-800 transition-all"
+          ></div>
+
+          <div
+            x-show="pulsingCircle > 9"
+            x-cloak
+            class="animate-ping button text-center bg-white font-bold rounded-full py-3.5 px-3.5 shadow-lg uppercase tracking-wider"
+          ></div>
+        </div>
+        <hr />
+
+        <!--CONTENT-->
+        <section class="bg-transparent" id="content">
+          <div class="container mx-auto px-6 py-10">
+            <h1
+              class="text-center text-3xl font-semibold capitalize text-gray-800 dark:text-white lg:text-4xl font-Literata"
+            >
+              Content
+            </h1>
+
+            <p
+              class="mt-4 text-center text-gray-500 dark:text-gray-300 font-OpenSans"
+            >
+              Welcome! As the title suggests, you will see all of our available
+              content below. <br />Some are to come sooner, please give us your
+              patience :)
+            </p>
+
+            <div
+              class="mt-8 grid grid-cols-1 gap-8 md:grid-cols-2 xl:mt-12 xl:grid-cols-3 xl:gap-12"
+            >
+              <a
+                href="./src/quarter1.html"
+                class="rounded-xl group relative block bg-black hover:-translate-x-1 hover:-translate-y-1 delay-50 duration-100 hover:shadow-[10px_10px_#7F5153]"
+              >
+                <img
+                  alt="Streaming"
+                  src="./img/streamingq1.jpg"
+                  class="rounded-xl absolute inset-0 h-full w-full object-cover bg-cover bg-no-repeat opacity-75 transition-opacity group-hover:opacity-50"
+                />
+
+                <div class="relative p-8">
+                  <p
+                    class="text-sm font-medium uppercase tracking-widest text-pink-500 font-PolySansB"
+                  >
+                    Quarter 1
+                  </p>
+
+                  <p class="text-2xl font-bold text-white font-OpenSans">
+                    Streaming
+                  </p>
+
+                  <div class="mt-64">
+                    <div
+                      class="translate-y-8 transform opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100"
+                    >
+                      <p class="text-sm text-white font-OpenSans">
+                        What is Streaming? Streaming media is multimedia that is
+                        delivered and consumed in a continuous manner from a
+                        source, with little or no intermediate storage in
+                        network elements. Streaming refers to the delivery
+                        method of content, rather than the content itself.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </a>
+              <!--"href" from Quarter 2-4-YTChannel has been removed, add it later-->
+              <a
+                href="./src/quarter2.html"
+                class="rounded-xl group relative block bg-black hover:-translate-x-1 hover:-translate-y-1 delay-50 duration-100 hover:shadow-[10px_10px_#7F5153] cursor-pointer"
+              >
+                <img
+                  alt="Comming Soon"
+                  src="./img/streamoutline.jpg"
+                  class="rounded-xl absolute inset-0 h-full w-full object-cover bg-cover bg-no-repeat opacity-75 transition-opacity group-hover:opacity-50"
+                />
+
+                <div class="relative p-8">
+                  <p
+                    class="text-sm font-medium uppercase tracking-widest text-pink-500 font-PolySansB"
+                  >
+                    Quarter 2
+                  </p>
+
+                  <p class="text-2xl font-bold text-white font-OpenSans">
+                    Streaming Outline
+                  </p>
+
+                  <div class="mt-64">
+                    <div
+                      class="translate-y-8 transform opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100"
+                    >
+                      <p class="text-sm text-white font-OpenSans">
+                        A streaming outline is a plan for a live event or
+                        broadcast. It defines the content, order, and timing of
+                        the broadcast, as well as any technical requirements
+                        that need to be in place. This plan typically includes
+                        information such as the type of content to be streamed,
+                        the duration of the stream, the estimated audience size,
+                        the equipment needed, and any special features that need
+                        to be included.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </a>
+
+              <a
+                class="rounded-xl group relative block bg-black hover:-translate-x-1 hover:-translate-y-1 delay-50 duration-100 hover:shadow-[10px_10px_#7F5153] cursor-pointer"
+                href="./src/quarter3.html"
+              >
+                <img
+                  alt="Quarter 3"
+                  src="./img/streaminglive.jpg"
+                  class="rounded-xl absolute inset-0 h-full w-full object-cover bg-cover bg-no-repeat opacity-75 transition-opacity group-hover:opacity-50"
+                />
+
+                <div class="relative p-8">
+                  <p
+                    class="text-sm font-medium uppercase tracking-widest text-pink-500 font-PolySansB"
+                  >
+                    Quarter 3
+                  </p>
+
+                  <p class="text-2xl font-bold text-white font-OpenSans">
+                    Live Streaming & Analysis
+                  </p>
+
+                  <div class="mt-64">
+                    <div
+                      class="translate-y-8 transform opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100"
+                    >
+                      <p class="text-sm text-white font-OpenSans">
+                        Live streaming is a way of broadcasting video content in
+                        real-time over the internet. It allows viewers to watch
+                        events, presentations, or performances from anywhere in
+                        the world, as long as they have an internet connection.
+                        Managing live streams and analyzing it's data can serve
+                        importance in businesses or rather, to increase your
+                        reach.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </a>
+
+              <a
+                href="https://www.youtube.com/@school_purposes"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="rounded-xl group relative block bg-black hover:-translate-x-1 hover:-translate-y-1 delay-50 duration-100 hover:shadow-[10px_10px_#7F5153] cursor-pointer"
+              >
+                <img
+                  alt="Youtube Channel"
+                  src="./img/youtubechannel.jpg"
+                  class="rounded-xl absolute inset-0 h-full w-full object-cover bg-cover bg-no-repeat opacity-75 transition-opacity group-hover:opacity-50"
+                />
+
+                <div class="relative p-8">
+                  <p
+                    class="text-sm font-medium uppercase tracking-widest text-pink-500 font-PolySansB"
+                  >
+                    Youtube Channel
+                  </p>
+
+                  <p class="text-2xl font-bold text-white font-OpenSans">
+                    Video Content
+                  </p>
+
+                  <div class="mt-64">
+                    <div
+                      class="translate-y-8 transform opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100"
+                    >
+                      <p class="text-sm text-white font-OpenSans">
+                        We fully present our Youtube Channel! For more
+                        information about our us and our content, check "about"
+                        on the navigation bar above.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </a>
+
+              <a
+                href="./src/events.html"
+                class="rounded-xl group relative block bg-black hover:-translate-x-1 hover:-translate-y-1 delay-50 duration-100 hover:shadow-[10px_10px_#7F5153] cursor-pointer"
+              >
+                <img
+                  alt="Events"
+                  src="./img/events.jpg"
+                  class="rounded-xl absolute inset-0 h-full w-full object-cover bg-cover bg-no-repeat opacity-75 transition-opacity group-hover:opacity-50"
+                />
+
+                <div class="relative p-8">
+                  <p
+                    class="text-sm font-medium uppercase tracking-widest text-pink-500 font-PolySansB"
+                  >
+                    Events
+                  </p>
+
+                  <p class="text-2xl font-bold text-white font-OpenSans">
+                    Upcomming Projects
+                  </p>
+
+                  <div class="mt-64">
+                    <div
+                      class="translate-y-8 transform opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100"
+                    >
+                      <p class="text-sm text-white font-OpenSans">
+                        Join us for our upcomming podcast! Make sure you
+                        subscribed to our Youtube channel to get notified on
+                        when our podcast releases.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </a>
+
+              <a
+                class="rounded-xl group relative block bg-black hover:-translate-x-1 hover:-translate-y-1 delay-50 duration-100 hover:shadow-[10px_10px_#7F5153] cursor-pointer"
+              >
+                <img
+                  alt="Comming Soon"
+                  src="./img/floatingastronaut.gif"
+                  class="rounded-xl absolute inset-0 h-full w-full object-cover bg-cover bg-no-repeat opacity-75 transition-opacity group-hover:opacity-50"
+                />
+
+                <div class="relative p-8">
+                  <p
+                    class="text-sm font-medium uppercase tracking-widest text-pink-500 font-PolySansB"
+                  >
+                    Quarter 4
+                  </p>
+
+                  <p class="text-2xl font-bold text-white font-OpenSans">
+                    Comming Soon
+                  </p>
+
+                  <div class="mt-64">
+                    <div
+                      class="translate-y-8 transform opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100"
+                    >
+                      <p class="text-sm text-white font-OpenSans">
+                        Comming Soon!
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <!--OUR TEAM-->
+
+        <section class="bg-transparent">
+          <div
+            class="h-[32rem] bg-gradient-to-b from-[rgba(172,65,57,0.3)] via-[rgba(172,65,57,0.3)] to-transparent"
+          >
+            <div class="container mx-auto px-6 py-8">
+              <h2
+                class="text-center font-semibold capitalize text-[20px] text-gray-300 font-Literata"
+              >
+                The Executive Team
+              </h2>
+
+              <div class="mx-auto mt-2 flex justify-center">
+                <span
+                  class="inline-block h-1 w-40 rounded-full bg-blue-500"
+                ></span>
+                <span
+                  class="mx-1 inline-block h-1 w-3 rounded-full bg-blue-500"
+                ></span>
+                <span
+                  class="inline-block h-1 w-1 rounded-full bg-blue-500"
+                ></span>
+              </div>
+
+              <h1
+                class="mx-auto mt-1 max-w-2xl text-center text-[30px] text-white font-bold font-OpenSans"
+              >
+                Let us meet Group 10!
+              </h1>
+            </div>
+          </div>
+
+          <div class="container mx-auto -mt-72 px-6 py-10 sm:-mt-80 md:-mt-96">
+            <div
+              class="mt-8 grid grid-cols-1 gap-8 md:grid-cols-2 xl:mt-16 xl:grid-cols-3"
+            >
+              <div
+                class="flex flex-col items-center rounded-xl border p-4 border-[#C2A6AE] sm:p-6"
+              >
+                <img
+                  class="aspect-square w-full rounded-full object-cover shadow-[#CB6BE6] shadow-lg hover:shadow-none"
+                  src="https://raw.githubusercontent.com/LeonardAu/LL-Website_Group10/master/img/a.jpg"
+                  alt=""
+                />
+
+                <h1
+                  class="mt-4 text-2xl font-semibold capitalize text-white bg-[rgba(203,107,230,0.5)] rounded-xl hover:border-transparent transition-all fadingeffect duration-500 px-3 font-OpenSans"
+                >
+                  Angel Tomas
+                </h1>
+
+                <p
+                  class="mt-2 capitalize text-gray-500 dark:text-gray-300 font-OpenSans"
+                >
+                  Facilitator
+                </p>
+              </div>
+              <div
+                class="flex flex-col items-center rounded-xl border p-4 border-[#C2A6AE] sm:p-6"
+              >
+                <img
+                  class="aspect-square w-full rounded-full object-cover shadow-[#FEBD59] shadow-lg hover:shadow-none"
+                  src="https://raw.githubusercontent.com/LeonardAu/LL-Website_Group10/master/img/J.jpg"
+                  alt=""
+                />
+
+                <h1
+                  class="mt-4 text-2xl font-semibold capitalize text-white bg-[rgba(254,189,89,0.5)] rounded-xl hover:border-transparent transition-all fadingeffect duration-500 px-3 font-OpenSans"
+                >
+                  Jodi Colina
+                </h1>
+
+                <p class="mt-2 capitalize text-gray-300 font-OpenSans">
+                  Scribe
+                </p>
+              </div>
+
+              <div
+                class="flex flex-col items-center rounded-xl border p-4 border-[#C2A6AE] sm:p-6"
+              >
+                <img
+                  class="aspect-square w-full rounded-full object-cover shadow-[#008036] shadow-lg hover:shadow-none"
+                  src="https://raw.githubusercontent.com/LeonardAu/LL-Website_Group10/master/img/a2.jpg"
+                  alt=""
+                />
+
+                <h1
+                  class="mt-4 text-2xl font-semibold capitalize text-white bg-[rgba(0,128,53,0.5)] rounded-xl hover:border-transparent transition-all fadingeffect duration-500 px-3 font-OpenSans"
+                >
+                  Ace Larida
+                </h1>
+
+                <p class="mt-2 capitalize text-gray-300 font-OpenSans">
+                  Scribe
+                </p>
+              </div>
+
+              <div
+                class="flex flex-col items-center rounded-xl border p-4 border-[#C2A6AE] sm:p-6"
+              >
+                <img
+                  class="aspect-square w-full rounded-full object-cover shadow-[#FF5757] shadow-lg hover:shadow-none"
+                  src="https://raw.githubusercontent.com/LeonardAu/LL-Website_Group10/master/img/a3.jpg"
+                  alt=""
+                />
+
+                <h1
+                  class="mt-4 text-2xl font-semibold capitalize text-white bg-[rgba(255,87,87,0.5)] rounded-xl hover:border-transparent transition-all fadingeffect duration-500 px-3 font-OpenSans"
+                >
+                  Adrian Alivarvar
+                </h1>
+
+                <p class="mt-2 capitalize text-gray-300 font-OpenSans">
+                  Spokesperson
+                </p>
+              </div>
+
+              <div
+                class="flex flex-col items-center rounded-xl border p-4 border-[#C2A6AE] sm:p-6"
+              >
+                <img
+                  class="aspect-square w-full rounded-full object-cover shadow-[#03989E] shadow-lg hover:shadow-none"
+                  src="https://raw.githubusercontent.com/LeonardAu/LL-Website_Group10/master/img/L.jpg"
+                  alt=""
+                />
+
+                <h1
+                  class="mt-4 text-2xl font-semibold capitalize text-white bg-[rgba(3,153,158,0.5)] rounded-xl hover:border-transparent transition-all fadingeffect duration-500 px-3 font-OpenSans"
+                >
+                  Leonard Bulawan
+                </h1>
+
+                <p class="mt-2 capitalize text-gray-300 font-OpenSans">
+                  Spokesperson
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- QUOTES----------------------------------->
+
+        <section
+          class="lg:bg-gradient-to-r lg:from-[rgba(32,25,26,0.5)] lg:via-[rgba(172,65,57,0.6)] lg:to-[rgba(32,25,26,0.5)] max-[1023px]:bg-[rgba(172,65,57,0.6)]"
+        >
+          <div class="container mx-auto px-6 py-10 items-center justify-center">
+            <h1
+              class="text-center text-3xl font-semibold capitalize text-gray-800 dark:text-white lg:text-4xl font-Literata"
+            >
+              A Famous Quote
+            </h1>
+
+            <div class="mx-auto mt-6 flex justify-center">
+              <span
+                class="inline-block h-1 w-40 rounded-full bg-blue-500"
+              ></span>
+              <span
+                class="mx-1 inline-block h-1 w-3 rounded-full bg-blue-500"
+              ></span>
+              <span
+                class="inline-block h-1 w-1 rounded-full bg-blue-500"
+              ></span>
+            </div>
+
+            <div
+              class="mx-auto mt-16 flex max-w-6xl items-center justify-center"
+            >
+              <div>
+                <p
+                  id="quotetext"
+                  class="flex items-center text-center text-white lg:mx-8 font-PolySansS"
+                ></p>
+
+                <div class="mt-8 flex flex-col items-center justify-center">
+                  <div class="mt-4 text-center">
+                    <h1
+                      id="quoteauthor"
+                      class="font-semibold text-[#C2A6AE] font-Literata"
+                    ></h1>
+                    <span
+                      id="quotetitle"
+                      class="text-sm text-white font-OpenSans"
+                    ></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!--CONTENT-->
+        <section class="bg-transparent">
+          <div class="container mx-auto px-6 py-10">
+            <div class="text-center">
+              <h1
+                class="text-3xl font-semibold capitalize text-gray-800 dark:text-white lg:text-4xl font-Literata"
+              >
+                Our Latest Content
+              </h1>
+
+              <p class="mx-auto mt-4 max-w-lg text-gray-500">
+                Check out our latest content!
+              </p>
+            </div>
+
+            <div
+              class="mt-8 grid grid-cols-1 gap-8 md:mt-16 md:grid-cols-2 xl:grid-cols-3"
+            >
+              <div>
+                <div class="relative">
+                  <img
+                    class="h-64 w-full rounded-lg object-cover object-center lg:h-80"
+                    src="./img/streaming.jpg"
+                    alt=""
+                  />
+                </div>
+
+                <h1
+                  class="mt-6 text-xl font-semibold text-gray-800 dark:text-white font-PolySansB"
+                >
+                  What is Streaming?
+                </h1>
+
+                <hr class="my-6 w-32 text-blue-500" />
+
+                <p class="text-sm text-gray-300 font-OpenSans">
+                  In this Quarter, we discussed what streaming is and what are
+                  it's uses. We also discussed about what do you do if you were
+                  trying to stream.
+                </p>
+
+                <a
+                  href="./src/quarter1.html"
+                  class="mt-4 inline-block text-blue-500 underline hover:text-blue-400 font-PolySansS"
+                  >Read more</a
+                >
+              </div>
+
+              <div>
+                <div class="relative">
+                  <img
+                    class="h-64 w-full rounded-lg object-cover object-center lg:h-80"
+                    src="./img/streamoutline.jpg"
+                    alt=""
+                  />
+                </div>
+
+                <h1
+                  class="mt-6 text-xl font-semibold text-gray-800 dark:text-white font-PolySansB"
+                >
+                  Streaming Outline
+                </h1>
+
+                <hr class="my-6 w-32 text-blue-500" />
+
+                <p class="text-sm text-gray-300 font-OpenSans">
+                  In this Quarter, we planned and discussed what we will do in
+                  the next quarter. We are trying to get preppared for our
+                  upcomming content.
+                </p>
+
+                <a
+                  href="./src/quarter2.html"
+                  class="mt-4 inline-block text-blue-500 underline hover:text-blue-400 font-PolySansS"
+                  >Read more</a
+                >
+              </div>
+
+              <div>
+                <div class="relative">
+                  <img
+                    class="h-64 w-full rounded-lg object-cover object-center lg:h-80"
+                    src="./img/abstractspace-reduced.jpg"
+                    alt=""
+                  />
+                </div>
+
+                <h1
+                  class="mt-6 text-xl font-semibold text-gray-800 dark:text-white font-PolySansB"
+                >
+                  Live Streaming
+                </h1>
+
+                <hr class="my-6 w-32 text-blue-500" />
+
+                <p class="text-sm text-gray-300 font-OpenSans">
+                  In this quarter, we initiated the official release of our
+                  stream and conducted an analysis of our audience's feedback
+                  and survey results.
+                </p>
+
+                <a
+                  href="https://www.facebook.com/100089276150786/videos/626588702810382/"
+                  target="_blank"
+                  class="mt-4 inline-block text-blue-500 underline hover:text-blue-400 font-PolySansS"
+                  >Watch stream</a
+                >
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!--FOOTER-->
+        <footer class="bg-[rgba(127,81,83,0.51)]">
+          <div
+            class="container m-auto space-y-8 px-6 py-16 text-gray-600 dark:text-gray-400 md:px-12 lg:px-20"
+          >
+            <div
+              class="flex flex-wrap items-center justify-between gap-4 border-b border-[rgba(194,166,174,0.6)] pb-8"
+            >
+              <img
+                width="100"
+                height="42"
+                src="../img/teamlogo.png"
+                alt="logo tailus"
+                class="w-24"
+              />
+              <div class="flex gap-6">
+                <a
+                  href="https://github.com/LeonardAu/TheWonderingMinds_Website"
+                  target="blank"
+                  aria-label="github"
+                  class="hover:text-primary"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    fill="currentColor"
+                    class="bi bi-github"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"
+                    ></path>
+                  </svg>
+                </a>
+                <!-- 
+          <a href="#" target="blank" aria-label="twitter" class="hover:text-primary">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-twitter" viewBox="0 0 16 16">
+            <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"></path>
+          </svg>
+        </a> 
+      -->
+                <a
+                  href="https://www.facebook.com/people/WonderMinds/100089276150786/"
+                  title="facebook"
+                  target="blank"
+                  aria-label="facebook"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor"
+                    class="m-auto w-5"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"
+                    ></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <div class="w-full -mx-6">
+              <div class="px-6">
+                <div>
+                  <p class="text-lg font-medium text-gray-100"></p>
+                </div>
+
+                <p class="font-OpenSans">
+                  Some of the features on this website is buggy with the Firefox
+                  and Safari browser.
+                </p>
+              </div>
+            </div>
+            <div
+              class="flex justify-between rounded-3xl bg-[rgba(32,25,26,0.5)] px-4 py-3 text-gray-400"
+            >
+              <span class="font-PolySansN"
+                >© Wondering Minds <span id="year">2022</span></span
+              >
+              <a
+                href="https://www.apache.org/licenses/LICENSE-2.0"
+                class="font-medium transition hover:text-primary font-PolySansN"
+                >Apache 2.0</a
+              >
+            </div>
+          </div>
+        </footer>
+      </div>
+    </div>
+
+    <!-- component -->
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+    <!--
+
+  <script>
+    AOS.init({once: true});
+  </script>
+
+-->
+
+    <script src="https://cdn.jsdelivr.net/npm/ukiyojs@3.0.3/dist/ukiyo.min.js"></script>
+
+    <script>
+      /**
+       * Ukiyo.js
+       */
+      const targets = document.querySelectorAll("#parallaxfx");
+      targets.forEach((target) => {
+        const parallax = new Ukiyo(target, {
+          // speed: 2,
+          // scale: 1.25
+        });
+      });
+    </script>
+
+    <script src="app.js"></script>
+  </body>
+</html>
+>>>>>>> b1223e4 (unfixed)

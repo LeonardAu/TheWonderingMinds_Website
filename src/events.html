@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -425,4 +426,433 @@ console.warn('Enter "command.help()" for a secret!');
   
   
 </body>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="./css/events.css">
+    <script defer src="https://unpkg.com/alpinejs-scroll-amount@latest/dist/scroll-amount.min.js" ></script> 
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link rel="icon" href="../img/teamlogo.png" type="image/png">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.15.4/css/all.css"/>
+    <style>
+        .countdownA{
+            -webkit-text-stroke: 1px #fff;
+        }
+        .countdownB{
+            -webkit-text-stroke: 0 #fff;
+        }
+    </style>
+</head>
+<body>
+    <div x-data="{ scrollPos: {} }" x-init="scrollPos = $scrollAmount" x-on:scroll.window="scrollPos = $scrollAmount">
+  
+        <div
+          class="fixed inset-x-0 top-0 h-1 z-[1000] bg-[#c2a6ae] ease-[linear] transition-[width]"
+          :style="{ width: `${scrollPos.scrollPercent}%` }"
+        ></div>
+
+<div x-data="{ mobileMenu: false }" class="font-sans antialiased">
+    <div class="min-h-screen bg-no-repeat bg-cover object-cover" style="background: url(../img/bg-stars.svg), linear-gradient(#c2a6ae,#20191A,#20191A);">
+        <nav class="bg-transparent">
+            <!-- Primary Navigation Menu -->
+            <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+                <div class="flex justify-between h-16">
+                    <div class="flex">
+                        <!-- Logo -->
+                        <div class="flex items-center flex-shrink-0 select-none"><img src="../img/teamlogo.png" alt="" class="h-16 w-16"></div>
+                        <!-- Navigation Links -->
+                        <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex select-none"><a
+                                class="inline-flex items-center px-1 pt-1 text-sm font-medium -mx-4 leading-5 text-white font-Blanka"> Wondering Minds </a></div>
+                    </div>
+      
+                    <div class="hidden sm:flex sm:items-center sm:ml-6">
+      
+      
+                        <div class="relative ml-3">
+                            <div>
+                                <span class="inline-flex rounded-md">
+                                    <a href="../index.html"
+                                        class="inline-flex items-center px-3 py-2 text-sm font-medium leading-4 transition duration-150 ease-in-out border border-transparent rounded-full text-gray-200 bg-[#20191A] hover:bg-gray-50 hover:text-gray-700 focus:outline-none active:bg-gray-50">Home
+                                         
+                                </a>
+                                </span>
+                            </div>
+      
+                            <div class="fixed inset-0 z-40" style="display: none;"></div>
+      
+      
+      
+                        </div>
+      
+                        <div class="relative ml-3">
+                            <div><span class="inline-flex rounded-md"><a href="./contactus.html"
+                                        class="inline-flex items-center px-3 py-2 text-sm font-medium leading-4 transition duration-150 ease-in-out border border-transparent rounded-full text-gray-200 bg-[#20191A] hover:bg-gray-50 hover:text-gray-700 focus:outline-none active:bg-gray-50">Contact Us
+                            </a></span></div><!-- Full Screen Dropdown Overlay -->
+      
+                            <div class="fixed inset-0 z-40" style="display: none;"></div>
+      
+                        </div>
+      
+                        
+                        <div class="relative ml-3">
+                            <div><span class="inline-flex rounded-md"><a href="https://github.com/LeonardAu/TheWonderingMinds_Website/blob/master/README.md" target="_blank" rel="noopener noreferrer"
+                                        class="inline-flex items-center px-3 py-2 text-sm font-medium leading-4 transition duration-150 ease-in-out border border-transparent rounded-full text-gray-200 bg-[#20191A] hover:bg-gray-50 hover:text-gray-700 focus:outline-none active:bg-gray-50">About
+                            </a></span></div><!-- Full Screen Dropdown Overlay -->
+      
+                            <div class="fixed inset-0 z-40" style="display: none;"></div>
+      
+                        </div>
+                    </div>
+      
+                    <div class="flex items-center -mr-2 sm:hidden">
+      
+      
+                        <button @click="mobileMenu = !mobileMenu"
+                            class="inline-flex items-center justify-center p-2 transition duration-150 ease-in-out rounded-md bg-[#20191A] text-gray-200 hover:text-gray-500 focus:outline-none focus:text-gray-500"><svg 
+                            x-show="mobileMenu === false" class="w-6 h-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                                <path class="inline-flex" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                                <path class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                            <svg x-show="mobileMenu === true" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+                          </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div
+              x-show="mobileMenu"
+              class="sm:hidden absolute inset-x-0 z-50 w-full bg-[#20191a]"
+            >
+              <div class="pt-2 pb-3 space-y-1">
+                <div>
+                  <a
+                    class="block py-2 pl-3 pr-4 text-base font-medium transition duration-150 ease-in-out text-indigo-200 bg-indigo-800 focus:outline-none focus:text-indigo-800 focus:bg-indigo-100 focus:border-indigo-700 font-Blanka"
+                    href="#"
+                  >
+                    Wondering Minds
+                  </a>
+                </div>
+              </div>
+              <div
+                class="pt-4 pb-1 border-t border-gray-200 dark:border-gray-600"
+              >
+                <a
+                  href="../index.html"
+                  class="flex items-center px-4 text-base font-medium transition duration-150 ease-in-out border-transparent text-gray-200 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300 focus:outline-none focus:text-gray-800 focus:bg-gray-50 focus:border-gray-300"
+                >
+                  <div>
+                    <div class="text-base font-medium">Home</div>
+                    <div class="text-sm font-medium text-gray-500">
+                      Go back home?
+                    </div>
+                  </div>
+                </a>
+                <div class="mt-3 space-y-1">
+                  <div>
+                    <a
+                      class="block py-2 pl-3 pr-4 text-base font-medium transition duration-150 ease-in-out border-l-4 border-transparent text-gray-200 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300 focus:outline-none focus:text-gray-800 focus:bg-gray-50 focus:border-gray-300"
+                      href="https://github.com/LeonardAu/TheWonderingMinds_Website/blob/master/README.md"
+                    >
+                      About
+                    </a>
+                  </div>
+
+                  <div>
+                    <a
+                      class="block py-2 pl-3 pr-4 text-base font-medium transition duration-150 ease-in-out border-l-4 border-transparent text-gray-200 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300 focus:outline-none focus:text-gray-800 focus:bg-gray-50 focus:border-gray-300"
+                      href="./contactus.html"
+                    >
+                      Contact Us
+                    </a>
+                  </div>
+
+                  <div
+                    class="border-t border-gray-200 dark:border-gray-600"
+                  ></div>
+
+                  <div class="block px-4 py-2 text-xs text-gray-300">
+                    Socials
+                  </div>
+                  <!-- Content -->
+                  <div>
+                    <a
+                      class="block py-2 pl-3 pr-4 text-base font-medium text-gray-600 transition duration-150 ease-in-out border-l-4 border-transparent dark:text-gray-200 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300 focus:outline-none focus:text-gray-800 focus:bg-gray-50 focus:border-gray-300"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      href="https://www.facebook.com/people/WonderMinds/100089276150786/"
+                    >
+                      Facebook
+                    </a>
+                  </div>
+                  <div>
+                    <a
+                      class="block py-2 pl-3 pr-4 text-base font-medium text-gray-600 transition duration-150 ease-in-out border-l-4 border-transparent dark:text-gray-200 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300 focus:outline-none focus:text-gray-800 focus:bg-gray-50 focus:border-gray-300"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      href="https://www.youtube.com/@school_purposes"
+                    >
+                      Youtube
+                    </a>
+                  </div>
+                  <!--(TIMELINE)
+                          <div class="border-t border-gray-200 dark:border-gray-600"></div>
+                    
+                    <div class="block px-4 py-2 text-xs text-gray-400"> Our Journey </div>
+                    <div><a class="block py-2 pl-3 pr-4 text-base font-medium text-gray-600 transition duration-150 ease-in-out border-l-4 border-transparent dark:text-gray-200 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300 focus:outline-none focus:text-gray-800 focus:bg-gray-50 focus:border-gray-300"
+                        href="#"> Timeline </a></div>  -->
+                </div>
+              </div>
+            </div>
+          </nav>
+    </nav>
+
+        <header class="bg-transparent">
+            <div class="px-4 py-6 mx-auto max-w-7xl sm:px-6 lg:px-8">
+                <h2 class="text-xl font-semibold leading-tight text-gray-200">  <ol class="inline-flex items-center space-x-1 md:space-x-3">
+                    <li class="inline-flex items-center">
+                      <a href="../index.html" class="text-sm inline-flex items-center text-white hover:text-gray-300">
+                        <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"></path></svg>
+                        Home
+                      </a>
+                    </li>
+                    <li>
+                      <div class="flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+                        </svg>
+                        <a href="./events.html" class="ml-1 md:ml-2 text-sm font-medium text-white hover:text-gray-300">Events</a>
+                      </div>
+                    </li>
+
+                  </ol></h2>
+            </div>
+        </header>
+        <div class="hidden" id="fireworks">
+            <div class="firework" id="firework1">
+                <div class="explosion"></div>
+                <div class="explosion"></div>
+                <div class="explosion"></div>
+                <div class="explosion"></div>
+                <div class="explosion"></div>
+                <div class="explosion"></div>
+                <div class="explosion"></div>
+                <div class="explosion"></div>
+                <div class="explosion"></div>
+                <div class="explosion"></div>
+                <div class="explosion"></div>
+                <div class="explosion"></div>
+            </div>
+            <div class="firework" id="firework2">
+                <div class="explosion"></div>
+                <div class="explosion"></div>
+                <div class="explosion"></div>
+                <div class="explosion"></div>
+                <div class="explosion"></div>
+                <div class="explosion"></div>
+                <div class="explosion"></div>
+                <div class="explosion"></div>
+                <div class="explosion"></div>
+                <div class="explosion"></div>
+                <div class="explosion"></div>
+                <div class="explosion"></div>
+            </div>
+            <div class="firework" id="firework3">
+                <div class="explosion"></div>
+                <div class="explosion"></div>
+                <div class="explosion"></div>
+                <div class="explosion"></div>
+                <div class="explosion"></div>
+                <div class="explosion"></div>
+                <div class="explosion"></div>
+                <div class="explosion"></div>
+                <div class="explosion"></div>
+                <div class="explosion"></div>
+                <div class="explosion"></div>
+                <div class="explosion"></div>
+            </div>
+            <div class="firework" id="firework4">
+                <div class="explosion"></div>
+                <div class="explosion"></div>
+                <div class="explosion"></div>
+                <div class="explosion"></div>
+                <div class="explosion"></div>
+                <div class="explosion"></div>
+                <div class="explosion"></div>
+                <div class="explosion"></div>
+                <div class="explosion"></div>
+                <div class="explosion"></div>
+                <div class="explosion"></div>
+                <div class="explosion"></div>
+            </div>
+            </div>
+        <div class="antialiased bg-transparent w-full min-h-screen text-slate-300 relative py-4">
+            <div class="grid grid-cols-12 mx-auto gap-2 sm:gap-4 md:gap-6 lg:gap-10 xl:gap-14 max-w-7xl my-10 px-2">
+            
+                
+                <div id="content" class="bg-white/10 col-span-full rounded-lg p-6">
+                    <div id="24h">
+                        <h1 class="font-bold py-4 uppercase text-center my-14 text-3xl text-transparent max-[639px]:text-[2em] sm:text-[5em] lg:text-[8em] leading-[.9em] countdownA" id="countdownuntil">Countdown <br> Until The <span class="text-white countdownB">Livesteam</span></h1>
+                        <div id="stats" class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 place-items-center gap-6">
+
+                            <div class="bg-black/60 min-[850px]:p-16 max-[849px]:p-12 rounded-lg text-center" id="initialcontainer1">
+                                <div class="space-x-4 items-center">
+                                    <div>
+                                        <p class="text-teal-300 text-sm font-medium uppercase leading-4 text-center">&nbsp;Days&nbsp;</p>
+                                        <p class="text-white font-bold text-2xl inline-flex items-center space-x-2">
+
+                                            <span id="days" class="text-3xl">?</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg-black/60 min-[850px]:p-16 max-[849px]:p-12 rounded-lg text-center" id="initialcontainer2">
+                                <div class="space-x-4 items-center">
+                                    <div>
+                                        <p class="text-teal-300 text-sm font-medium uppercase leading-4 text-center">&nbsp;Hours&nbsp;</p>
+                                        <p class="text-white font-bold text-2xl inline-flex items-center space-x-2">
+
+                                            <span id="hours" class="text-3xl">?</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-black/60 min-[850px]:p-16 max-[849px]:p-12 rounded-lg text-center" id="initialcontainer3">
+                                <div class="space-x-4 items-center">
+                                    <div>
+                                        <p class="text-teal-300 text-sm font-medium uppercase leading-4 text-center">Minutes</p>
+                                        <p class="text-white font-bold text-2xl inline-flex items-center space-x-2">
+
+                                            <span id="minutes" class="text-3xl">?</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="bg-black/60 min-[850px]:p-16 max-[849px]:p-12 rounded-lg text-center" id="initialcontainer4">
+                                <div class="space-x-4 items-center">
+                                    <div>
+                                        <p class="text-teal-300 text-sm font-medium uppercase leading-4 text-center">Seconds</p>
+                                        <p class="text-white font-bold text-2xl inline-flex items-center space-x-2">
+
+                                            <span id="seconds" class="text-3xl">?</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                    <hr class="">
+                    <div id="last-users">
+                        <h1 class="font-bold py-4 uppercase underline leading-9">PODCAST EVENT</h1>
+                        <div>
+                            <h1 class="font-bold text-lg lg:text-3xl bg-gradient-to-br from-white via-white/50 to-transparent bg-clip-text text-transparent">To you<span class="text-indigo-400">,</span></h1>
+                    <p class="text-slate-400 text-sm mb-2">Our dear guest</p>
+        
+                    <div id="menu" class="flex flex-col space-y-2 my-5">
+        <p>Hello and we are The Wondering Minds Group! We wanted to invite you to watch our live stream about the important things to know about self-defense and how self-defense skills can increase teenagers' self-confidence. Be sure to check out our channel for updates on when we will be streaming. Our target audience is around 100 people, and we would love for you to be a part of it. Thank you for considering joining us, we really appreciate it!</p>
+                    </div>
+                    <p class="text-sm text-left text-gray-200">--Regards, Group 10</p> <br>
+        <img src="../img/Group10InvitationPoster.png" alt="invitationcard.png">
+        <br>
+                </div>
+                        </div>
+                    </div>
+                   
+                </div>
+            </div>
+    </div>
+</div>
+
+
+<footer class="bg-gray-100 dark:bg-gray-900">
+    <div class="container m-auto space-y-8 px-6 py-16 text-gray-600 dark:text-gray-400 md:px-12 lg:px-20">
+      <div class="flex flex-wrap items-center justify-between gap-4 border-b border-gray-200 dark:border-gray-800 pb-8">
+        <img width="100" height="42" src="../img/teamlogo.png" alt="logo tailus" class="w-24">
+        <div class="flex gap-6">
+          <a href="https://github.com/LeonardAu/TheWonderingMinds_Website" target="blank" aria-label="github" class="hover:text-primary">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+              <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path>
+            </svg>
+          </a>
+        <!-- 
+            <a href="#" target="blank" aria-label="twitter" class="hover:text-primary">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-twitter" viewBox="0 0 16 16">
+              <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"></path>
+            </svg>
+          </a> 
+        -->  
+          <a href="https://www.facebook.com/people/WonderMinds/100089276150786/" title="facebook" target="blank" aria-label="facebook">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="currentColor"
+              class="m-auto w-5"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"
+              ></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div class="w-full -mx-6 ">
+        <div class="px-6">
+            <div>
+                <p class="text-lg font-medium text-gray-700 dark:text-gray-100"></p>
+            </div>
+  
+            <p>Some of the features on this website is buggy with the Firefox and Safari browser.</p>
+        </div>
+    </div>
+      <div class="flex justify-between rounded-3xl bg-gray-800 px-4 py-3 text-gray-400">
+        <span>© Wondering Minds <span id="year">2022</span></span>
+        <a href="https://www.apache.org/licenses/LICENSE-2.0" class="font-medium transition hover:text-primary">Apache 2.0</a>
+      </div>
+    </div>
+  </footer>
+</div>
+<audio autoplay loop id="verygreatmusic">
+  </audio>
+<script src="./js/countdown.js" id="theoneandonly"></script>
+<script>
+console.warn('Enter "command.help()" for a secret!');
+    let command = {
+    help() {
+        console.log("Hello! Welcome to the console. Let me give you the available commands for now.\ncommand.playmusic() - Plays a lofi music looped, to stop the loop type 'command.unloop()'.");
+    },
+    /*deactivatetimer() {
+        document.getElementById("theoneandonly").removeAttribute("src","./js/countdown.js");
+        console.log("The timer has been deactivated; Refresh the page to restart.");
+    },*/
+    playmusic(){
+        document.getElementById("verygreatmusic").innerHTML =
+      "<source src='js/Lazy-Afternoon.mp3' type='audio/mp3'/>";
+      console.log("Lazy Afternoon by Purrple Cat | https://purrplecat.com/\nMusic promoted by https://www.chosic.com/free-music/all/\nCreative Commons CC BY-SA 3.0\nhttps://creativecommons.org/licenses/by-sa/3.0/");
+      console.log("Type command.unloop() to remove the loop.\nRefresh the page to stop the music.");
+    },
+    unloop(){
+    document.getElementById("verygreatmusic").removeAttribute('loop');
+    console.log("You have unlooped the music, refresh the page to start it again.");
+    },
+};
+
+</script>
+  
+  
+</body>
+>>>>>>> b1223e4 (unfixed)
 </html>
