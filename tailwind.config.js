@@ -5,6 +5,7 @@ module.exports = {
     "./src/contactus.html",
     "./src/quarter1.html",
     "./src/quarter2.html",
+    "./src/quarter3.html",
     "./src/events.html",
   ],
   theme: {
